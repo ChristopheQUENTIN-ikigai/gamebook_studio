@@ -1,0 +1,1214 @@
+{
+  "title": "Whispers of R'lyeh",
+  "author": "Gamebook Studio",
+  "description": "Arkham, 1927. You are Dr. Elara Marsh, a professor of marine biology at Miskatonic University, drawn into a web of madness when a colleague vanishes after discovering a strange idol dredged from the Atlantic. As reality fractures and impossible geometries bleed into the waking world, you must uncover the truth before your sanity — and the world — is consumed by what sleeps beneath the waves.",
+  "version": "1.0",
+  "cover": "",
+  "start_scene": "scene_001",
+  "stat_names": [
+    "sanity",
+    "intellect",
+    "resolve",
+    "occult",
+    "composure",
+    "perception"
+  ],
+  "initial_stats": {
+    "sanity": 20,
+    "intellect": 14,
+    "resolve": 10,
+    "occult": 2,
+    "composure": 8,
+    "perception": 10
+  },
+  "initial_max_stats": {
+    "sanity": 20,
+    "intellect": 16,
+    "resolve": 14,
+    "occult": 12,
+    "composure": 14,
+    "perception": 14
+  },
+  "initial_items": [
+    "research_notes",
+    "pocket_watch"
+  ],
+  "initial_gold": 25,
+  "theme_color": [
+    20,
+    40,
+    35
+  ],
+  "items": {
+    "research_notes": {
+      "id": "research_notes",
+      "name": "Dr. Marsh's Research Notes",
+      "description": "Your leather-bound notebook, filled with observations on deep-sea specimens and, lately, unsettling sketches you don't remember drawing.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "pocket_watch": {
+      "id": "pocket_watch",
+      "name": "Father's Pocket Watch",
+      "description": "An old brass watch. It stopped working three days ago. The hands point to a time that doesn't exist.",
+      "icon": "",
+      "type": "personal",
+      "stackable": false,
+      "effects": {}
+    },
+    "elder_sign": {
+      "id": "elder_sign",
+      "name": "Elder Sign Pendant",
+      "description": "A stone pendant carved with a five-pointed star within a flaming eye. It feels warm against your skin and the whispers grow quieter when you hold it.",
+      "icon": "",
+      "type": "protection",
+      "stackable": false,
+      "effects": {}
+    },
+    "revolver": {
+      "id": "revolver",
+      "name": ".38 Revolver",
+      "description": "A snub-nosed revolver with four rounds remaining. Cold comfort against what you've seen, but comfort nonetheless.",
+      "icon": "",
+      "type": "weapon",
+      "stackable": false,
+      "effects": {}
+    },
+    "black_idol": {
+      "id": "black_idol",
+      "name": "The Black Idol",
+      "description": "A figurine of some aquatic horror carved from a stone that should not exist. It is always cold and slightly damp. Looking at it too long causes nosebleeds.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "necronomicon_page": {
+      "id": "necronomicon_page",
+      "name": "Page from the Necronomicon",
+      "description": "A single vellum page covered in Arabic script. The words seem to move when viewed peripherally. Contains a banishing incantation.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "laudanum": {
+      "id": "laudanum",
+      "name": "Laudanum Tincture",
+      "description": "An opium preparation. Calms the nerves and suppresses the visions. Restores 4 sanity.",
+      "icon": "",
+      "type": "consumable",
+      "stackable": true,
+      "effects": {
+        "stat": "sanity:4"
+      }
+    },
+    "deep_one_scale": {
+      "id": "deep_one_scale",
+      "name": "Deep One Scale",
+      "description": "A scale the size of your palm, iridescent green-black. It came from something that was once a person.",
+      "icon": "",
+      "type": "evidence",
+      "stackable": false,
+      "effects": {}
+    },
+    "silver_dagger": {
+      "id": "silver_dagger",
+      "name": "Silver-Inlaid Dagger",
+      "type": "weapon",
+      "description": "An antique dagger with silver wire wound around the blade. Family heirloom — or Deep One relic?",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "marsh_diary": {
+      "id": "marsh_diary",
+      "name": "Obed Marsh's Diary",
+      "type": "quest",
+      "description": "A water-damaged journal from 1846. Documents the original pact with the Deep Ones in horrifying detail.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "ward_chalk": {
+      "id": "ward_chalk",
+      "name": "Warding Chalk",
+      "type": "tool",
+      "description": "Chalk mixed with powdered silver and sea salt. Can inscribe protective circles that repel Deep Ones.",
+      "icon": "",
+      "stackable": true,
+      "effects": {}
+    }
+  },
+  "scenes": {
+    "scene_001": {
+      "id": "scene_001",
+      "title": "The Empty Office",
+      "body": "Professor Warren's office at Miskatonic University is in disarray. Books lie open on every surface, their pages covered in frantic annotations. The chalkboard is filled with equations that make your head swim — not mathematics you recognize, but something that suggests mathematics the way a scream suggests language.\n\nWarren has been missing for three days. The Dean asked you to collect his papers, given your friendship. But as you step inside, the smell hits you: brine and something older, fouler — the smell of deep ocean trenches where sunlight has never reached.\n\nOn Warren's desk sits a stone idol, roughly eight inches tall. It depicts a creature that is part octopus, part dragon, part something your mind refuses to process. Beside it, a letter addressed to you.\n\nYour hands tremble as you reach for it.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 500
+      },
+      "choices": [
+        {
+          "text": "Read the letter first",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Examine the idol closely",
+          "target": "scene_003",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-2"
+          }
+        },
+        {
+          "text": "Search through Warren's notes and books",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:1"
+          }
+        },
+        {
+          "text": "Steady your nerves and decipher the warden's scrawled lighthouse log (Lore check).",
+          "roll": "lore:8",
+          "target": "scene_002",
+          "fail_target": "scene_002",
+          "effects": {
+            "add_codeword": "lighthouse_log"
+          },
+          "fail_effects": {
+            "stat_sanity": -2
+          },
+          "tags": [
+            "skill_check",
+            "demo"
+          ]
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "start",
+        "indoor",
+        "investigation"
+      ]
+    },
+    "scene_002": {
+      "id": "scene_002",
+      "title": "Warren's Letter",
+      "body": "The letter is written in Warren's hand, but the handwriting deteriorates as it progresses — steady copperplate at the start, degrading to a frantic scrawl by the end.\n\n'Dear Elara,\n\nIf you are reading this, I have gone where I must. The idol was dredged from the Atlantic by the trawler Morrison, coordinates 47.9°N, 29.3°W — close to where the Johansen narrative places the risen city. It is genuine. I have verified the stone — it matches no known geological formation. It is not of this earth.\n\nThe dreams began the night I brought it to my office. The city beneath the waves. The door that is not a door. The thing that waits behind it. I believe the idol is a key, or a signal, or both.\n\nI have gone to Innsmouth. Old Zadok Allen knows something — he spoke of the Deep Ones to the Olmstead boy in '28. I must find him.\n\nDo NOT touch the idol with bare hands. Do NOT sleep in the same room as it.\n\nIf I do not return in one week, take everything to Dr. Armitage at the library. He has dealt with such things before.\n\nI am sorry to involve you. But you are the only one I trust who will believe.\n\n— H. Warren'\n\nThe date is six days old.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 400
+      },
+      "choices": [
+        {
+          "text": "Take the idol and letter to Dr. Armitage immediately",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:2"
+          }
+        },
+        {
+          "text": "Drive to Innsmouth to find Warren yourself",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Research the coordinates and the 'risen city' in the university library",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "clue"
+      ]
+    },
+    "scene_003": {
+      "id": "scene_003",
+      "title": "The Idol",
+      "body": "You pick up the idol. The stone is cold — impossibly cold, as if it has been sitting at the bottom of the ocean. It is heavier than it should be. And the carving... the more you look at it, the more detail emerges. Features that seemed crude at first glance resolve into terrifying precision. The creature's eyes are not blank — they contain depths, layers, dimensions that a carving in stone should not possess.\n\nYour vision blurs. For a moment — just a moment — you are somewhere else. A vast underwater plain of cyclopean stone blocks, arranged in geometries that violate Euclidean space. A door taller than a cathedral, covered in barnacles and slime, standing slightly ajar. And beyond it, something immense, something sleeping, something that is beginning to stir—\n\nYou drop the idol with a gasp. You are back in Warren's office. Your nose is bleeding. The clock on the wall has jumped forward forty minutes.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 400
+      },
+      "choices": [
+        {
+          "text": "Wrap the idol in cloth and take it — it may be needed",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "black_idol",
+            "stat": "sanity:-2"
+          }
+        },
+        {
+          "text": "Leave the idol and read Warren's letter instead",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Destroy the idol — smash it on the floor",
+          "target": "scene_008",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "artifact"
+      ]
+    },
+    "scene_004": {
+      "id": "scene_004",
+      "title": "Warren's Research",
+      "body": "You spend an hour poring over Warren's notes. The picture that emerges is deeply disturbing. Warren had been cross-referencing maritime disappearances, geological surveys of the Atlantic seabed, the folklore of Innsmouth, and — most alarmingly — the restricted texts in Miskatonic's Special Collections, including the Necronomicon of Abdul Alhazred.\n\nHis notes reference 'R'lyeh' — a sunken city where a cosmic entity called Cthulhu lies in deathless sleep. Warren believed the recent increase in seismic activity along the Mid-Atlantic Ridge was not natural, but a sign of R'lyeh's rising.\n\nA loose page from the Necronomicon lies pressed between two notebooks — removed from Special Collections illegally. The Arabic text is accompanied by Warren's translation: a banishing incantation, he writes, 'of last resort.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 350
+      },
+      "choices": [
+        {
+          "text": "Take the Necronomicon page — you may need that incantation",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "necronomicon_page",
+            "stat": "sanity:-1"
+          }
+        },
+        {
+          "text": "Read Warren's letter now",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "investigation",
+        "clue"
+      ]
+    },
+    "scene_005": {
+      "id": "scene_005",
+      "title": "Dr. Armitage",
+      "body": "Dr. Henry Armitage, head librarian of Miskatonic University, is an old man with eyes that have seen too much. When you show him Warren's letter, his face goes grey.\n\n'Innsmouth,' he whispers. 'I had hoped we were done with that accursed town.' He locks his office door and draws the blinds. 'Professor Marsh, what I am about to tell you will sound like madness. I assure you it is not.'\n\nHe tells you about the Dunwich Horror of '28. About the Deep Ones — aquatic humanoids that interbreed with the people of Innsmouth. About the Old Ones, cosmic beings of incomprehensible power. About the thin places where reality wears through.\n\n'If Warren has gone to Innsmouth with that idol...' Armitage opens a desk drawer and produces a carved stone pendant. 'Take this Elder Sign. It will protect you from their influence. And take this.' He places a snub-nosed revolver on the desk. 'Mundane, but effective against the merely physical.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Take both items and drive to Innsmouth",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "add_item": "elder_sign",
+            "add_item2": "revolver",
+            "stat": "resolve:3"
+          }
+        },
+        {
+          "text": "Ask Armitage to come with you",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "elder_sign",
+            "set_flag": "armitage_ally:yes"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "ally",
+        "story"
+      ]
+    },
+    "scene_006": {
+      "id": "scene_006",
+      "title": "The Road to Innsmouth",
+      "body": "The drive north along the coast takes three hours. The landscape grows bleaker with each mile — salt-blasted scrubland giving way to grey marshes and abandoned farms. The road to Innsmouth has been officially closed since the government raid of 1928, but the barriers are rusted and easily moved.\n\nInnsmouth itself is a ruin. Half the buildings are collapsed or boarded up. A perpetual fog clings to the harbor. The stench of rotting fish is overwhelming. But it is not entirely deserted — you see curtains twitch in windows, and shadows move in alleys.\n\nYou park your car near the old Gilman House hotel. The lobby is empty but not abandoned — someone has been here recently. A ledger on the front desk shows a single entry: 'H. Warren. Room 7. Feb 12.'\n\nThat was six days ago.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 250
+      },
+      "choices": [
+        {
+          "text": "Go directly to Room 7",
+          "target": "scene_010",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Search the town for Old Zadok Allen first",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Investigate the harbor — follow the smell",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-2"
+          }
+        },
+        {
+          "text": "Search for the old Marsh family vault beneath the church",
+          "target": "scene_023",
+          "conditions": {
+            "min_stat": "perception:8"
+          },
+          "effects": {
+            "stat": "perception:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "location",
+        "innsmouth"
+      ]
+    },
+    "scene_007": {
+      "id": "scene_007",
+      "title": "The Library of Forbidden Knowledge",
+      "body": "The Miskatonic University Library's Special Collections room is locked behind an iron door that requires two keys. You have Warren's key — he gave you a copy months ago in case of emergency. The second belongs to Dr. Armitage.\n\nYou use Warren's key and find the lock already disengaged — someone has been here. Inside, the restricted texts sit in glass cases: the Necronomicon, the Pnakotic Manuscripts, the Book of Eibon. One case is open — the one that held the Necronomicon. The book itself is present, but a section of pages has been carefully cut out.\n\nOn the reading table, you find Warren's translation notes. The coordinates he mentioned correspond to a point in the Atlantic where, in 1925, a sailor named Johansen reportedly encountered a risen landmass of impossible architecture. The official report called it a volcanic formation. Warren's notes call it 'the threshold of R'lyeh.'\n\nA sound behind you — footsteps in the hallway. Slow. Wet.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 600,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Hide behind the shelves and observe who enters",
+          "target": "scene_013",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Call out — it might be Armitage or a night guard",
+          "target": "scene_014",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Grab your findings and leave by the fire exit",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "investigation",
+        "horror"
+      ]
+    },
+    "scene_008": {
+      "id": "scene_008",
+      "title": "Indestructible",
+      "body": "You hurl the idol at the floor with all your strength. It hits the hardwood with a dull thud — and bounces. Not a chip, not a scratch. You try again, slamming it against Warren's desk. Nothing. The stone absorbs the impact as if it were rubber.\n\nThen you notice: the temperature in the room has dropped sharply. Your breath mists. And the idol... the idol is vibrating. A low hum fills the room, below the threshold of hearing but felt in your teeth, your bones. The lights flicker.\n\nFrom somewhere far away — or far below — you hear something that might be a voice, vast and drowning.\n\nThe humming stops. The idol sits on the floor, innocuous, cold, waiting.\n\nWhatever this thing is, it cannot be destroyed here.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 450,
+        "y": 450
+      },
+      "choices": [
+        {
+          "text": "Take the idol — you'll need to understand it to stop it",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "black_idol",
+            "stat": "sanity:-3"
+          }
+        },
+        {
+          "text": "Leave it and read Warren's letter",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror"
+      ]
+    },
+    "scene_009": {
+      "id": "scene_009",
+      "title": "Armitage Agrees",
+      "body": "'I am too old for this,' Armitage says, reaching for his coat. 'But then, I was too old the last time, and the time before that.' He produces a sawed-off shotgun from behind a row of encyclopedias. 'One learns to keep certain tools at hand in this profession.'\n\nHe gives you the Elder Sign pendant and the revolver. 'We take my car. I know the back roads into Innsmouth — the ones the government doesn't watch.'\n\nAs you drive north through gathering twilight, Armitage tells you more about the Deep Ones, their bargain with the people of Innsmouth, and the terrible thing that sleeps in R'lyeh. His voice is steady, but his hands grip the steering wheel like a man holding on to the edge of an abyss.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Ask Armitage about weaknesses of the Deep Ones",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:2",
+            "add_item": "revolver",
+            "add_item2": "elder_sign"
+          }
+        },
+        {
+          "text": "Ride in silence, preparing yourself mentally",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:2",
+            "add_item": "revolver",
+            "add_item2": "elder_sign"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "ally",
+        "travel"
+      ]
+    },
+    "scene_010": {
+      "id": "scene_010",
+      "title": "Room 7",
+      "body": "The stairs creak under your feet as you climb to the second floor. Room 7's door is ajar. Inside, the room has been torn apart — mattress slashed, drawers pulled out, wallpaper clawed. Warren's suitcase lies open, clothes scattered.\n\nBut it is the walls that stop you cold. Warren has written on them — in chalk, in ink, in what might be blood. Equations, symbols, star charts, and repeated over and over: 'PH'NGLUI MGLW'NAFH CTHULHU R'LYEH WGAH'NAGL FHTAGN.'\n\n'In his house at R'lyeh, dead Cthulhu waits dreaming.'\n\nOn the floor, you find a deep-sea scale the size of your palm, iridescent and impossibly fresh. And a trail of something wet and glistening leading from the window toward the harbor.\n\nWarren didn't leave this room voluntarily. He was taken.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 350,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Take the scale as evidence and follow the trail to the harbor",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {
+            "add_item": "deep_one_scale",
+            "stat": "sanity:-2"
+          }
+        },
+        {
+          "text": "Use laudanum to steady your nerves before proceeding",
+          "target": "scene_012",
+          "conditions": {
+            "has_item": "laudanum"
+          },
+          "effects": {
+            "remove_item": "laudanum",
+            "stat": "sanity:4"
+          }
+        },
+        {
+          "text": "Search for more clues about where they took Warren",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "investigation"
+      ]
+    },
+    "scene_011": {
+      "id": "scene_011",
+      "title": "Old Zadok Allen",
+      "body": "You find Zadok Allen where the locals say he always is: on the breakwater, drinking from a paper bag and watching the sea with eyes that have witnessed too much. He is ancient, weathered, and quite drunk — but his mind is sharp beneath the gin-fog.\n\n'Another one,' he mutters when you mention Warren. 'Another fool come to ask about the Deep Ones. I told the Olmstead boy. I told the government men. Nobody listens. Nobody ever listens.'\n\nHe tells you about the Esoteric Order of Dagon — the cult that runs Innsmouth. About Captain Obed Marsh who made a pact with the Deep Ones generations ago. About the hybrids — people slowly transforming into aquatic creatures.\n\n'Your friend,' Zadok says, 'they took him to Devil Reef. That's where the Deep Ones come ashore. That's where the door opens, when the stars are right.' He looks at the sky. 'And the stars are nearly right again.'\n\nHe presses a bottle of laudanum into your hand. 'You'll need this more than I do, if you're going where I think you're going.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Go to Devil Reef immediately",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "add_item": "laudanum",
+            "add_codeword": "DEVIL_REEF"
+          }
+        },
+        {
+          "text": "Check Room 7 at the Gilman House first",
+          "target": "scene_010",
+          "conditions": {},
+          "effects": {
+            "add_item": "laudanum"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "clue"
+      ]
+    },
+    "scene_012": {
+      "id": "scene_012",
+      "title": "The Harbor",
+      "body": "The Innsmouth harbor is a place of nightmare. Abandoned fishing boats rot at their moorings. The water is black and still, with an oily sheen that catches no reflection. The smell is beyond terrible — not just fish, but something biological and wrong, like an operating theatre in an abattoir.\n\nThe wet trail from the hotel leads along the wharf to a stone pier that extends toward a rocky outcrop a half mile offshore: Devil Reef. Even in daylight, the reef looks wrong — the rock formations suggest deliberate construction, as if something vast was built there and then submerged.\n\nAs you watch, bubbles break the surface of the harbor. Many bubbles. Rising in a pattern too regular to be natural.\n\nSomething is surfacing.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 50
+      },
+      "choices": [
+        {
+          "text": "Hold your ground and watch — you need to understand what you're facing",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3"
+          }
+        },
+        {
+          "text": "Hide behind the wharf pylons and observe",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-1"
+          }
+        },
+        {
+          "text": "Use the Elder Sign to ward yourself",
+          "target": "scene_016",
+          "conditions": {
+            "has_item": "elder_sign"
+          },
+          "effects": {
+            "stat": "resolve:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "innsmouth"
+      ]
+    },
+    "scene_013": {
+      "id": "scene_013",
+      "title": "The Intruder",
+      "body": "You press yourself behind the bookshelves and hold your breath. The footsteps approach — slow, uneven, accompanied by a sound like wet fabric dragging on stone.\n\nA figure enters the Special Collections room. It wears a long coat and a wide-brimmed hat, but its proportions are wrong — too broad, too hunched. Its hands, visible in the lamplight, have a greenish tinge, and the fingers are webbed.\n\nIt goes directly to the Necronomicon case and runs those webbed fingers over the glass. Then it turns toward Warren's notes on the table — and stops. It is sniffing the air. It can smell you.\n\nSlowly, horribly, it turns in your direction.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 650,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Stay hidden — it may not be certain where you are",
+          "target": "scene_014",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3"
+          }
+        },
+        {
+          "text": "Show the Elder Sign if you have it",
+          "target": "scene_017",
+          "conditions": {
+            "has_item": "elder_sign"
+          },
+          "effects": {}
+        },
+        {
+          "text": "Fire the revolver",
+          "target": "scene_018",
+          "conditions": {
+            "has_item": "revolver"
+          },
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "encounter"
+      ]
+    },
+    "scene_014": {
+      "id": "scene_014",
+      "title": "Confrontation in the Library",
+      "body": "It finds you. The thing in the coat lurches around the bookshelf and you see its face — or what was once a face. The features are human but distorted: bulging, unblinking eyes, a mouth too wide, skin that glistens with a sheen of mucus. A hybrid. One of the people of Innsmouth, far along in the transformation.\n\nIt speaks, and its voice is a gurgling rasp: 'The Marsh woman. They said you would come. The Master beneath the waves sends greetings to his kin.'\n\nKin? The word hits you like ice water. Marsh. Your family name. The same name as the Innsmouth Marshes, descendants of Captain Obed Marsh who made the pact with the Deep Ones.\n\nYour father's pocket watch. His strange aversion to bright light. His weekend fishing trips he would never explain. The scales you found in the bathroom drain as a child.\n\nNo. It cannot be.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Reject the claim — demand to know where Warren is",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3",
+            "stat2": "resolve:3"
+          }
+        },
+        {
+          "text": "Listen to what it has to say about your family",
+          "target": "scene_019",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-4",
+            "stat2": "intellect:3"
+          }
+        },
+        {
+          "text": "Flee the library immediately",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "revelation"
+      ]
+    },
+    "scene_015": {
+      "id": "scene_015",
+      "title": "Hidden Clues",
+      "body": "Beneath the torn mattress, you find Warren's personal journal — smaller than his research notebook, bound in red leather. The last entries are fragmented:\n\n'Feb 13 — They came in the night. Fishlike things. They spoke my name. The idol called them.\n\nFeb 14 — Zadok was right. Devil Reef. The tunnels beneath go down, down, impossibly far. I saw the gate. God help me, I saw what waits on the other side.\n\nFeb 15 — They say I have a choice. Join the congregation. Open the gate. Let Him wake. Or become food for the shoggoths. Is there a third option? There must be. The incantation—'\n\nThe entry ends mid-sentence. A dark stain covers the rest of the page.\n\nBut tucked into the journal's spine is a hand-drawn map of Devil Reef's tunnel system, with a chamber marked 'THE GATE' at its deepest point.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 250,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Take the map and go to Devil Reef",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "intellect:2",
+            "add_codeword": "DEVIL_REEF"
+          }
+        },
+        {
+          "text": "Go to the harbor first to find a boat",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "investigation",
+        "clue"
+      ]
+    },
+    "scene_016": {
+      "id": "scene_016",
+      "title": "Devil Reef",
+      "body": "Devil Reef rises from the black water like the spine of some buried leviathan. You reach it by rowboat as the sun sets — the worst possible timing, but you cannot wait. The tide reveals an entrance in the rock face: a tunnel descending at a steep angle into absolute darkness.\n\nThe walls inside are not natural stone. They are carved — vast blocks fitted together with inhuman precision, covered in bas-reliefs depicting scenes of worship, transformation, and a sleeping colossus dreaming in an underwater city.\n\nDeeper. The tunnel opens into a cathedral-sized cavern. The ceiling is lost in darkness. The floor is a still pool of black water, and in its centre rises a stone platform connected by a narrow causeway. On the platform: an altar. And chained to the altar, unconscious but alive, is Professor Warren.\n\nBeyond the altar, the far wall of the cavern is not a wall at all. It is a door. Carved with geometries that hurt to look at, covered in the same symbols as the idol, and standing very slightly ajar. Through the crack, you see not darkness but a pulsing, greenish light, and you hear — feel — the breathing of something immense.\n\nThe Deep Ones are gathered in the water around the platform. Dozens of them. Watching you with bulbous, unblinking eyes.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": -50
+      },
+      "choices": [
+        {
+          "text": "Rush to free Warren and try to escape",
+          "target": "scene_020",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3"
+          }
+        },
+        {
+          "text": "Use the Elder Sign to hold back the Deep Ones while you reach Warren",
+          "target": "scene_020",
+          "conditions": {
+            "has_item": "elder_sign"
+          },
+          "effects": {
+            "stat": "resolve:3"
+          }
+        },
+        {
+          "text": "Read the banishing incantation from the Necronomicon page",
+          "target": "scene_021",
+          "conditions": {
+            "has_item": "necronomicon_page"
+          },
+          "effects": {
+            "stat": "sanity:-5"
+          }
+        },
+        {
+          "text": "Use the Black Idol — perhaps it can close the door as well as open it",
+          "target": "scene_022",
+          "conditions": {
+            "has_item": "black_idol"
+          },
+          "effects": {
+            "stat": "sanity:-4"
+          }
+        },
+        {
+          "text": "Draw a warding circle with chalk to hold back the Deep Ones",
+          "target": "scene_020",
+          "conditions": {
+            "has_item": "ward_chalk",
+            "min_stat": "occult:6"
+          },
+          "effects": {
+            "stat": "composure:3",
+            "remove_item": "ward_chalk"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "climax",
+        "horror",
+        "boss"
+      ]
+    },
+    "scene_017": {
+      "id": "scene_017",
+      "title": "The Elder Sign's Power",
+      "body": "You thrust the Elder Sign pendant forward. The carved stone blazes with silver light — and the hybrid shrieks, throwing its webbed hands before its face. The skin on its hands blisters and smokes where the light touches it.\n\n'The Old Sign!' it hisses, retreating. 'You cannot stop what comes, surface-dweller. The stars align. The gate opens. He rises!' It crashes through the library window and is gone, leaving only a trail of slime and a lingering stench of brine.\n\nYour hands are shaking. But the Elder Sign still glows softly, warm in your grip. Whatever these things are, they fear this symbol. That knowledge is a weapon.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 600,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Report to Armitage and go to Innsmouth together",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:3"
+          }
+        },
+        {
+          "text": "Go to Innsmouth alone while the trail is hot",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "action"
+      ]
+    },
+    "scene_018": {
+      "id": "scene_018",
+      "title": "Gunfire in the Library",
+      "body": "The revolver's report is deafening in the enclosed space. The bullet strikes the hybrid in the shoulder, and it staggers — greenish ichor spraying from the wound. But it does not fall. It turns toward you with a gurgling snarl, and you see the wound already closing, the flesh knitting together with horrifying speed.\n\nYou fire twice more. The creature is driven back but not killed. It crashes through the library door and flees into the night, leaving a trail of inhuman blood.\n\nYou have one bullet left. And now every night-watchman on campus will be coming to investigate the gunshots.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 700,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Leave before security arrives — drive to Innsmouth now",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:1"
+          }
+        },
+        {
+          "text": "Wait for security and explain — you need allies, even mundane ones",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "action"
+      ]
+    },
+    "scene_019": {
+      "id": "scene_019",
+      "title": "Blood of the Deep",
+      "body": "The hybrid speaks of your lineage: Captain Obed Marsh of Innsmouth. Your great-great-grandfather. The pact he made with the Deep Ones — his bloodline in exchange for their treasures. Every descendant of Obed Marsh carries the Deep One gene. Some transform early. Some never transform at all. But the potential is there, in every cell.\n\nYour father knew. That is why he left Innsmouth. Why he never spoke of his family. Why he watched you for signs of 'the change' throughout your childhood.\n\n'You are kin,' the hybrid says. 'The Master calls to his children. You feel it, don't you? The pull of the sea. The dreams of the city beneath the waves. It is not madness. It is awakening.'\n\nThe terrible thing is: you have felt it. The dreams. The fascination with the deep ocean that led you to marine biology. The way your skin itches after long baths.\n\nBut you are still human. You still have a choice.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Reject your heritage — you are human, and you will save Warren",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:4",
+            "add_codeword": "HUMAN_CHOICE"
+          }
+        },
+        {
+          "text": "Ask the hybrid to take you to the gathering at Devil Reef",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3",
+            "add_codeword": "DEEP_BLOOD"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "revelation",
+        "story"
+      ]
+    },
+    "scene_020": {
+      "id": "scene_020",
+      "title": "The Rescue",
+      "body": "You sprint across the causeway toward Warren, the Deep Ones surging in the water around you. Webbed hands grasp at the stone, pulling glistening bodies onto the causeway. The Elder Sign blazes in your hand — or your revolver barks — or you simply run faster than anything has a right to.\n\nYou reach Warren. He is alive, barely conscious, muttering in a language that isn't human. You cut his bonds with your knife. He opens his eyes — and for a moment, they are not his eyes. They are dark, pupil-less, ancient.\n\nThen he blinks, and he is Warren again. 'Elara? How... we have to close the gate. The incantation. Do you have the page?'\n\nThe great door behind the altar pulses with greenish light. The crack is wider now. The breathing is louder. Something on the other side is pressing against the door.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": -150
+      },
+      "choices": [
+        {
+          "text": "Read the incantation together to seal the gate",
+          "target": "scene_victory",
+          "conditions": {
+            "has_item": "necronomicon_page"
+          },
+          "effects": {
+            "stat": "sanity:-5"
+          }
+        },
+        {
+          "text": "Use the Black Idol to close the gate",
+          "target": "scene_victory",
+          "conditions": {
+            "has_item": "black_idol"
+          },
+          "effects": {
+            "stat": "sanity:-4"
+          }
+        },
+        {
+          "text": "Drag Warren out and flee — seal the tunnels from outside",
+          "target": "scene_escape",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "climax"
+      ]
+    },
+    "scene_021": {
+      "id": "scene_021",
+      "title": "The Incantation",
+      "body": "You read the words from the Necronomicon page. They are not Arabic — not truly. They are older than Arabic, older than language, sounds that were old when the first fish crawled onto land. Speaking them feels like swallowing broken glass. Your vision doubles, triples.\n\nBut the effect is immediate. The great door shudders. The greenish light flickers. The Deep Ones shriek and dive beneath the water. The breathing from beyond the door hitches — and then, with a sound like a continent shifting, the door begins to close.\n\nThe rock of Devil Reef groans. Cracks spider across the ceiling. This place is collapsing.\n\nYou grab Warren and run.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": -150
+      },
+      "choices": [
+        {
+          "text": "Race for the tunnel exit as the cavern collapses",
+          "target": "scene_victory",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-3"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "GATE_SEALED"
+        }
+      ],
+      "tags": [
+        "climax",
+        "escape"
+      ]
+    },
+    "scene_022": {
+      "id": "scene_022",
+      "title": "The Idol Reversed",
+      "body": "An insane gamble — but the idol opened the gate. Perhaps it can close it.\n\nYou hold the Black Idol aloft before the great door and will it to reverse its purpose. The stone grows hot in your hands — burning — but you don't let go. The idol vibrates with a frequency that makes your teeth ache and your eyes water.\n\nThe door responds. The greenish light brightens to a searing intensity, then begins to contract. The idol cracks in your hands, dark energy bleeding from the fractures. With a final, tremendous effort, you hurl the idol into the closing gap.\n\nThe door slams shut with a force that knocks you off your feet. The idol is gone — consumed. The Deep Ones wail in despair. The breathing behind the door falls silent.\n\nYou have sealed the gate. But at what cost? Your hands are burned. Your mind is fractured. And you can feel the Deep One blood in your veins, stirred by contact with the idol, beginning its slow work.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": -250
+      },
+      "choices": [
+        {
+          "text": "Free Warren and escape before the reef collapses",
+          "target": "scene_victory",
+          "conditions": {},
+          "effects": {
+            "stat": "sanity:-4"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "GATE_SEALED"
+        }
+      ],
+      "tags": [
+        "climax"
+      ]
+    },
+    "scene_victory": {
+      "id": "scene_victory",
+      "title": "Grey Dawn",
+      "body": "You emerge from Devil Reef as the first grey light of dawn touches the eastern horizon. Behind you, the tunnels collapse with a grinding roar, sealing whatever remains of the gate beneath tons of rock. The sea churns and foams as the reef itself begins to sink — slowly, inexorably returning to the deep.\n\nWarren is alive beside you in the rowboat, shivering, weeping, but alive. The madness is fading from his eyes. He grips your hand.\n\n'It's sealed,' he whispers. 'For now. The stars will align again. They always do. But not today. Not today.'\n\nYou row back to Innsmouth in silence. The fog is lifting. The town looks merely sad now, not sinister — a place dying of its own corruption. You will report to Armitage. The government will come again. And this time, perhaps, they will seal the tunnels permanently.\n\nBut in the quiet moments, when you close your eyes, you still see the door. You still hear the breathing. And sometimes, late at night, you catch yourself staring at the ocean with eyes that are not entirely your own.\n\nSome doors, once opened, can never be fully closed.\n\n--- THE END ---\n\nThank you for playing WHISPERS OF R'LYEH.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": -300
+      },
+      "choices": [],
+      "on_enter": [],
+      "tags": [
+        "ending",
+        "victory"
+      ]
+    },
+    "scene_escape": {
+      "id": "scene_escape",
+      "title": "Flight from the Deep",
+      "body": "You haul Warren through the tunnels as the Deep Ones give chase. Their webbed feet slap against the wet stone behind you. The Elder Sign holds them at a distance, but it is weakening — or your will is.\n\nYou burst out of the reef tunnel into cold night air and throw Warren into the rowboat. Behind you, the Deep Ones stop at the waterline, watching with their enormous eyes.\n\nThe gate remains open. You have saved Warren, but not the world. Not yet.\n\nIn Arkham, you will regroup. You will research. You will find another way to close that door. But the dreams will not stop. And the stars continue their slow, inexorable alignment.\n\nThe story is not over. It may never be over.\n\n--- TO BE CONTINUED ---\n\nThank you for playing WHISPERS OF R'LYEH.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": -250
+      },
+      "choices": [],
+      "on_enter": [],
+      "tags": [
+        "ending",
+        "partial"
+      ]
+    },
+    "scene_023": {
+      "id": "scene_023",
+      "title": "The Marsh Family Vault",
+      "body": "Following clues from Warren's notes, you find the Marsh family vault beneath the old First Congregational Church in Innsmouth. The vault hasn't been opened in decades — the lock is green with verdigris.\n\nInside, you find more than dusty coffins. There is a hidden study, perfectly preserved. Maps of the ocean floor around Devil Reef, annotated in your great-great-grandfather's hand. A diary documenting the original pact — Captain Obed Marsh's deal with the Deep Ones: their gold and fish in exchange for interbreeding. The diary describes the ritual in clinical detail.\n\nBut the most disturbing find is a family tree, meticulously maintained. Your name is on it. Beside it, a notation in fresh ink: 'Awakening potential: HIGH. Target for recruitment — Year 1927.'\n\nSomeone has been in this vault recently. Someone who knows about you.\n\nBeneath the family tree, hidden in a false bottom: a silver-inlaid dagger and a tin of strange chalk.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": -100
+      },
+      "choices": [
+        {
+          "text": "Take the diary, dagger, and chalk — you need every weapon",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "add_item": "marsh_diary",
+            "add_item2": "silver_dagger",
+            "add_item3": "ward_chalk",
+            "stat": "occult:4",
+            "stat2": "perception:2"
+          }
+        },
+        {
+          "text": "Read the diary thoroughly before moving on",
+          "target": "scene_024",
+          "conditions": {},
+          "effects": {
+            "add_item": "marsh_diary",
+            "stat": "occult:3",
+            "stat2": "sanity:-3"
+          }
+        },
+        {
+          "text": "Burn everything — destroy this legacy",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:4",
+            "stat2": "composure:2"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "VAULT_FOUND"
+        }
+      ],
+      "tags": [
+        "investigation",
+        "horror",
+        "revelation"
+      ]
+    },
+    "scene_024": {
+      "id": "scene_024",
+      "title": "The Pact of Obed Marsh",
+      "body": "The diary is written in a cramped, increasingly erratic hand. Obed Marsh describes his first contact with the Deep Ones in 1838 — how they rose from the waves near Ponape, their fish-like faces gleaming in moonlight. He was terrified, then fascinated, then devoted.\n\nThe pact was simple: the Deep Ones would fill Innsmouth's nets and provide gold from their sunken cities. In return, the townspeople would worship Dagon, intermarry with the Deep Ones, and raise the hybrid children as their own.\n\n'They are not monsters,' Obed writes. 'They are the next stage. We are the chrysalis; they are the butterfly. My grandchildren will breathe water as easily as air. They will never age. They will never die. Is this not what every parent wants for their children?'\n\nThe final entry, dated 1878: 'The Esoteric Order is established. The government suspects nothing. The transformation is irreversible and beautiful. I only wish I could live to see the Great Rising, when R'lyeh itself ascends and Father Dagon walks the land.'\n\nYour hands tremble. This is your blood. Your heritage. Your potential future.\n\nYour perception sharpens — you notice details you missed before. The way the walls of the vault are subtly curved, like the inside of a shell. The faint smell of brine that isn't coming from outside.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": -150
+      },
+      "choices": [
+        {
+          "text": "Steel yourself and continue to Devil Reef with this knowledge",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "add_item": "silver_dagger",
+            "add_item2": "ward_chalk",
+            "stat": "occult:5",
+            "stat2": "perception:3",
+            "add_codeword": "PACT_KNOWN"
+          }
+        },
+        {
+          "text": "You feel the pull of the sea growing stronger — resist it",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "resolve:4",
+            "stat2": "composure:-2",
+            "stat3": "sanity:-2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "horror",
+        "lore",
+        "revelation"
+      ]
+    }
+  },
+  "achievements": {
+    "first_ending": {
+      "name": "The Tale Told",
+      "hint": "See any conclusion of the dread chronicle."
+    },
+    "victor": {
+      "name": "Sealed Away",
+      "hint": "Banish the dreamer back beneath the waves."
+    },
+    "fallen": {
+      "name": "Whispers Heeded",
+      "hint": "Surrender to the call from the deep."
+    },
+    "completionist": {
+      "name": "Cartographer of Madness",
+      "hint": "Walk every corner of the cursed coast."
+    },
+    "collector": {
+      "name": "Antiquarian",
+      "hint": "Recover every relic of forbidden lore."
+    },
+    "lucky": {
+      "name": "Stars Aligned",
+      "hint": "Survive every hazard without a single failed check."
+    },
+    "scholar": {
+      "name": "Initiate of the Veil",
+      "hint": "Gather knowledge mortals were never meant to hold."
+    }
+  }
+}

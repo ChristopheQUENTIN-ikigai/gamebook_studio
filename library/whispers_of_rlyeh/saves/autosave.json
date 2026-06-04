@@ -1,0 +1,46 @@
+{
+  "name": "Adventurer",
+  "stats": {
+    "sanity": 20,
+    "intellect": 15,
+    "resolve": 10,
+    "occult": 2,
+    "composure": 8,
+    "perception": 10
+  },
+  "max_stats": {
+    "sanity": 20,
+    "intellect": 16,
+    "resolve": 14,
+    "occult": 12,
+    "composure": 14,
+    "perception": 14
+  },
+  "inventory": [
+    "research_notes",
+    "pocket_watch"
+  ],
+  "max_inventory": 12,
+  "gold": 25,
+  "codewords": [],
+  "disciplines": [],
+  "current_scene": "scene_004",
+  "visited_scenes": [
+    "scene_001",
+    "scene_004"
+  ],
+  "notebook": [],
+  "flags": {},
+  "history": [
+    "scene_025",
+    "scene_001"
+  ],
+  "play_seconds": 7.439289346017176,
+  "achievements": [],
+  "choices_made": 1,
+  "rolls_succeeded": 0,
+  "rolls_failed": 0,
+  "_timestamp": 1780236808.662647,
+  "_slot": "autosave",
+  "_scene_title": "Warren's Research"
+}
