@@ -1,0 +1,1194 @@
+{
+  "title": "Shadows of Eldrath",
+  "author": "Gamebook Studio",
+  "description": "In the dying realm of Eldrath, the Shadow Crown stirs beneath the Ironroot Mountains. You are a Ranger of the Duskwatch, sworn to hold back the darkness. When the ancient wards fail and shadow-creatures pour through the Ashgate, you must journey into the deep to destroy the Crown before the Lich-King Morvath claims it. A dark fantasy adventure inspired by the greatest tales of Middle-earth and the perilous dungeons beneath.",
+  "version": "1.0",
+  "cover": "",
+  "start_scene": "scene_001",
+  "stat_names": [
+    "might",
+    "wit",
+    "valor",
+    "stealth",
+    "lore",
+    "endurance"
+  ],
+  "initial_stats": {
+    "might": 10,
+    "wit": 8,
+    "valor": 12,
+    "stealth": 6,
+    "lore": 4,
+    "endurance": 14
+  },
+  "initial_max_stats": {
+    "might": 14,
+    "wit": 14,
+    "valor": 16,
+    "stealth": 12,
+    "lore": 12,
+    "endurance": 20
+  },
+  "initial_items": [
+    "ranger_sword",
+    "cloak_of_dusk"
+  ],
+  "initial_gold": 15,
+  "theme_color": [
+    60,
+    45,
+    30
+  ],
+  "items": {
+    "ranger_sword": {
+      "id": "ranger_sword",
+      "name": "Ranger's Sword",
+      "description": "A keen blade forged in starlight by the Duskwatch smiths. It glows faintly near shadow-creatures.",
+      "icon": "",
+      "type": "weapon",
+      "stackable": false,
+      "effects": {
+        "might_bonus": 2
+      }
+    },
+    "cloak_of_dusk": {
+      "id": "cloak_of_dusk",
+      "name": "Cloak of Dusk",
+      "description": "A grey-green cloak that blends with shadow and stone. The mark of the Duskwatch.",
+      "icon": "",
+      "type": "armor",
+      "stackable": false,
+      "effects": {}
+    },
+    "iron_key": {
+      "id": "iron_key",
+      "name": "Iron Key of Ashgate",
+      "description": "A heavy key engraved with dwarven runes. Opens the inner gate.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "healing_root": {
+      "id": "healing_root",
+      "name": "Athelas Root",
+      "description": "A fragrant herb that heals wounds when chewed. Restores 4 stamina.",
+      "icon": "",
+      "type": "consumable",
+      "stackable": true,
+      "effects": {
+        "stat": "valor:4"
+      },
+      "consumable": true,
+      "use_effects": {
+        "stat_endurance": 4
+      }
+    },
+    "shadow_amulet": {
+      "id": "shadow_amulet",
+      "name": "Amulet of Warding",
+      "description": "A silver amulet inscribed with ancient glyphs. It burns shadow-flesh.",
+      "icon": "",
+      "type": "accessory",
+      "stackable": false,
+      "effects": {}
+    },
+    "dwarf_shield": {
+      "id": "dwarf_shield",
+      "name": "Dwarven Shield",
+      "description": "A battered but mighty shield of the Ironroot dwarves.",
+      "icon": "",
+      "type": "armor",
+      "stackable": false,
+      "effects": {
+        "might_bonus": 1
+      }
+    },
+    "ancient_scroll": {
+      "id": "ancient_scroll",
+      "name": "Scroll of Banishment",
+      "description": "A crumbling scroll containing a spell to banish undead. Single use.",
+      "icon": "",
+      "type": "consumable",
+      "stackable": false,
+      "effects": {}
+    },
+    "shadow_crown": {
+      "id": "shadow_crown",
+      "name": "The Shadow Crown",
+      "description": "A crown of black iron wreathed in dark flame. It whispers of power and ruin.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "elven_rope": {
+      "id": "elven_rope",
+      "name": "Elven Rope",
+      "type": "tool",
+      "description": "A coil of silvery rope woven by the Silverleaf elves. Light as silk, strong as iron chain. Can bear the weight of three men.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "shadow_lantern": {
+      "id": "shadow_lantern",
+      "name": "Shadow Lantern",
+      "type": "tool",
+      "description": "A dwarf-made lantern that burns with cold blue flame. Its light reveals hidden passages and dispels shadow illusions.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "morvath_ring": {
+      "id": "morvath_ring",
+      "name": "Morvath's Signet Ring",
+      "type": "quest",
+      "description": "A ring of black iron bearing the Lich-King's seal. It burns cold against your skin and whispers of forgotten kingdoms.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "healing_draught": {
+      "id": "healing_draught",
+      "name": "Dwarven Healing Draught",
+      "type": "consumable",
+      "description": "A thick amber liquid brewed from mountain herbs. Restores endurance and eases pain.",
+      "icon": "",
+      "stackable": true,
+      "effects": {
+        "stat": "endurance:6"
+      }
+    }
+  },
+  "scenes": {
+    "scene_001": {
+      "id": "scene_001",
+      "title": "The Ashgate Falls",
+      "body": "The night is torn apart by a sound like thunder. You stand on the ramparts of Duskhold as the ancient Ashgate—the great barrier of warding-stone that has held the shadow at bay for a thousand years—cracks and crumbles. Through the breach pour creatures of living darkness: wraith-hounds with eyes like dying embers, and behind them, the slow grinding advance of bone-armoured revenants.\n\nCaptain Erynn grips your shoulder. 'The Shadow Crown. It must be stirring again beneath the Ironroot. Someone must go down there and destroy it before Morvath reclaims it.' She presses a worn map into your hands. 'You are the fastest blade in the Duskwatch. Go now, through the old mine road, before the shadow covers everything.'\n\nThe cold wind carries the scent of ash and iron. Below the wall, two paths descend into darkness.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 500
+      },
+      "choices": [
+        {
+          "text": "Take the Old Mine Road — the direct path through dwarven tunnels",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Descend through the Whispering Forest — longer but may find allies",
+          "target": "scene_003",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Search the armoury for supplies before leaving",
+          "target": "scene_010",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Vault from the rampart onto the courier's wagon below (Valor check).",
+          "roll": "valor:9",
+          "target": "scene_002",
+          "fail_target": "scene_002",
+          "effects": {
+            "stat_endurance": -1
+          },
+          "fail_effects": {
+            "stat_endurance": -3
+          },
+          "tags": [
+            "skill_check",
+            "demo"
+          ]
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "start",
+        "outdoor"
+      ]
+    },
+    "scene_002": {
+      "id": "scene_002",
+      "title": "The Old Mine Road",
+      "body": "You descend the narrow steps carved into the cliff face, your ranger's cloak snapping in the updraft. The mine entrance yawns before you — a perfect arch of dwarf-carved stone, now draped with webs thick as rope.\n\nInside, the air is stale and heavy. Your sword glows with a faint blue light, warning you: shadow-creatures are near. The tunnel forks ahead. To the left, you hear the drip of water and see the flicker of old torch-sconces still burning with dwarf-fire. To the right, the passage descends steeply and the blue glow of your blade intensifies.\n\nSomething skitters in the darkness above you.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 250,
+        "y": 380
+      },
+      "choices": [
+        {
+          "text": "Take the left tunnel toward the dwarf-fire light",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Descend the right passage — directly toward the shadow",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:-2"
+          }
+        },
+        {
+          "text": "Investigate the skittering above you first",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "underground",
+        "dungeon"
+      ]
+    },
+    "scene_003": {
+      "id": "scene_003",
+      "title": "The Whispering Forest",
+      "body": "The trees of the Whispering Forest are ancient — older than the Duskwatch, older perhaps than the kingdoms of men. Their silver bark gleams in the starlight, and their leaves murmur with voices just below the threshold of understanding.\n\nYou move quietly along the deer-track, your cloak making you all but invisible among the ferns. After an hour of walking, you come upon a clearing where a campfire burns low. Around it sit three figures: a dwarf in battered armour polishing an axe, an elf-woman with a longbow across her knees, and a hooded figure whose face you cannot see.\n\nThe elf spots you first. 'A Ranger. Come, sit. We felt the Ashgate fall. We have been waiting for someone to come.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 380
+      },
+      "choices": [
+        {
+          "text": "Join them and share what you know of the Shadow Crown",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:2"
+          }
+        },
+        {
+          "text": "Approach cautiously — the hooded figure troubles you",
+          "target": "scene_008",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Bypass the camp and continue alone through the forest",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "forest",
+        "encounter"
+      ]
+    },
+    "scene_004": {
+      "id": "scene_004",
+      "title": "The Dwarven Hall",
+      "body": "The left tunnel opens into a vast hall — the old Gathering Chamber of the Ironroot dwarves. Pillars as thick as oak trunks rise into darkness above, carved with the stern faces of dwarf-lords. Dwarf-fire still burns in bronze sconces along the walls, casting a warm amber glow.\n\nAt the far end of the hall, a massive iron door stands shut. Before it lies a dead dwarf warrior, his axe still clutched in his hands, surrounded by the dissolving remains of shadow-creatures. He has been dead perhaps a day.\n\nYou notice an iron key on a chain around his neck, and a leather satchel at his side.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 150,
+        "y": 260
+      },
+      "choices": [
+        {
+          "text": "Take the iron key and the satchel",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "iron_key"
+          }
+        },
+        {
+          "text": "Pay respects to the fallen dwarf, then search carefully for traps",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "iron_key",
+            "stat": "valor:2"
+          }
+        },
+        {
+          "text": "Try to force the iron door open without the key",
+          "target": "scene_011",
+          "conditions": {
+            "min_stat": "might:12"
+          },
+          "effects": {
+            "stat": "might:-3"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "underground",
+        "dungeon",
+        "treasure"
+      ]
+    },
+    "scene_005": {
+      "id": "scene_005",
+      "title": "Shadow Ambush",
+      "body": "The darkness thickens around you like ink poured into water. Your sword blazes blue-white now — the shadow-creatures are very close. Three wraith-hounds materialise from the walls themselves, their forms flickering between solid and shadow. They circle you, growling with a sound like tearing cloth.\n\nYou raise your blade. The Ranger's training steadies your hand, but these are no ordinary beasts. Their claws can pass through armour and grip the soul beneath.\n\nThe first one lunges.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 260
+      },
+      "choices": [
+        {
+          "text": "Stand and fight all three with your blade",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:-4",
+            "stat2": "might:-1"
+          }
+        },
+        {
+          "text": "Use the Amulet of Warding to repel them",
+          "target": "scene_013",
+          "conditions": {
+            "has_item": "shadow_amulet"
+          },
+          "effects": {}
+        },
+        {
+          "text": "Retreat and find another way around",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:-1"
+          }
+        },
+        {
+          "text": "Read the Scroll of Banishment aloud",
+          "target": "scene_013",
+          "conditions": {
+            "has_item": "ancient_scroll"
+          },
+          "effects": {
+            "remove_item": "ancient_scroll"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "combat",
+        "underground"
+      ]
+    },
+    "scene_006": {
+      "id": "scene_006",
+      "title": "The Cave Spider",
+      "body": "You look up into the darkness and see it: an enormous cave spider, its body the size of a horse, clinging to the ceiling with legs like jointed spears. Its cluster of eyes reflects the blue glow of your sword. Silk threads hang from its spinnerets, some still holding the desiccated husks of orcs.\n\nIt hasn't attacked yet — it's watching you, calculating. These deep-cave spiders are intelligent, or so the old Ranger lore says. Some can even be reasoned with, after a fashion.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 250,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Speak to it calmly — offer it food from your pack",
+          "target": "scene_014",
+          "conditions": {},
+          "effects": {
+            "gold": "-5"
+          }
+        },
+        {
+          "text": "Attack before it can drop on you",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:-2"
+          }
+        },
+        {
+          "text": "Back away slowly into the left tunnel",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "underground"
+      ]
+    },
+    "scene_007": {
+      "id": "scene_007",
+      "title": "The Fellowship of the Clearing",
+      "body": "You join the three travelers around the fire. The dwarf introduces himself as Borin Ironhand, last survivor of the Ironroot garrison. The elf is Aelindra of the Silverleaf, a warden of the forest. The hooded figure lowers his cowl to reveal an old man with piercing grey eyes — Thandril, a loremaster who has studied the Shadow Crown for decades.\n\n'The Crown cannot be simply broken,' Thandril says, his voice grave. 'It must be taken to the Forge of Endings, deep in the lowest level of the Ironroot. Only there, in the fire that made it, can it be unmade.'\n\nBorin grunts. 'I know the way. But the deep roads are crawling with Morvath's servants now.'\n\nAelindra strings her bow. 'Then we go together. Four is better than one against the dark.'\n\nThandril presses a silver amulet into your hand. 'Take this. It will shield you against the Crown's whispers.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 260
+      },
+      "choices": [
+        {
+          "text": "Accept their help — enter the Ironroot together",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "shadow_amulet",
+            "stat": "wit:2",
+            "set_flag": "fellowship:yes"
+          }
+        },
+        {
+          "text": "Take the amulet but insist on going alone — you move faster solo",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "shadow_amulet"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "ally",
+        "story"
+      ]
+    },
+    "scene_008": {
+      "id": "scene_008",
+      "title": "The Hooded Stranger",
+      "body": "You circle the camp, watching from the treeline. The hooded figure seems to sense your scrutiny. He stands slowly and walks toward the edge of the clearing — toward you.\n\n'I know you are there, Ranger,' he says softly. 'I am Thandril. I have been expecting the Duskwatch to send someone. Come — we have much to discuss and little time.'\n\nHe opens his palm and a small sphere of silver light floats above it. 'I am a loremaster, not a threat. But I understand your caution. The shadow breeds suspicion in all hearts. That is its first weapon.'\n\nThe dwarf by the fire calls out: 'Oi! If you two are done being dramatic, the stew is getting cold!'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 650,
+        "y": 260
+      },
+      "choices": [
+        {
+          "text": "Trust Thandril and join the group",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:1"
+          }
+        },
+        {
+          "text": "Remain suspicious — demand proof of his identity",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "story"
+      ]
+    },
+    "scene_009": {
+      "id": "scene_009",
+      "title": "The Iron Door",
+      "body": "The great iron door of the Ironroot inner sanctum stands before you. Dwarven runes are carved around its frame, glowing faintly with residual enchantment. Beyond this door lies the deep road that leads to the Forge of Endings — and the Shadow Crown.\n\nThe air thrums with dark energy. You can feel the Crown's presence below, like a heartbeat of malice resonating through the stone. Your sword's blue glow flickers and pulses in response.\n\nThe keyhole in the door is shaped like a clenched fist — the sign of the Ironroot clan.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Use the Iron Key to open the door",
+          "target": "scene_017",
+          "conditions": {
+            "has_item": "iron_key"
+          },
+          "effects": {}
+        },
+        {
+          "text": "Try to force the door open with brute strength",
+          "target": "scene_011",
+          "conditions": {
+            "min_stat": "might:12"
+          },
+          "effects": {
+            "stat": "might:-3"
+          }
+        },
+        {
+          "text": "Search the hall for another way in",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Investigate strange marks on the wall — Duskwatch cipher",
+          "target": "scene_030",
+          "conditions": {
+            "min_stat": "lore:3"
+          },
+          "effects": {
+            "stat": "stealth:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "underground",
+        "gate"
+      ]
+    },
+    "scene_010": {
+      "id": "scene_010",
+      "title": "The Armoury of Duskhold",
+      "body": "You race through the corridors of Duskhold as chaos erupts around you. Guards rush past toward the breach, their faces grim. In the armoury, old Gareth the weaponsmith is frantically handing out blades and shields.\n\n'Take what you need, Ranger!' he shouts over the din. 'And if you're heading down there—' he jerks his thumb downward, '—you'll want this.' He pulls a battered dwarven shield from the rack and a bundle of athelas root from a shelf.\n\n'The shield belonged to a dwarf-lord who came through here fifty years ago. Good against shadow-steel, he said. And the athelas — well, you know what it does.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 500
+      },
+      "choices": [
+        {
+          "text": "Take both the shield and the athelas, then head to the Mine Road",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "dwarf_shield",
+            "add_item2": "healing_root"
+          }
+        },
+        {
+          "text": "Take only the athelas — a shield will slow you down — and head to the Forest",
+          "target": "scene_003",
+          "conditions": {},
+          "effects": {
+            "add_item": "healing_root"
+          }
+        },
+        {
+          "text": "Ask Gareth if he has anything enchanted against shadow magic",
+          "target": "scene_018",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "indoor",
+        "shop"
+      ]
+    },
+    "scene_011": {
+      "id": "scene_011",
+      "title": "Brute Force",
+      "body": "You throw your full weight against the iron door. The ancient hinges groan and protest, and agony shoots through your shoulder, but the door shudders open with a tortured screech of metal on stone.\n\nBeyond lies a spiral staircase descending into absolute darkness. The air rising from below is cold and carries the stench of old death. Your sword blazes bright blue — the shadow presence is overwhelming down there.\n\nYou are through, but the noise has attracted attention. Behind you, you hear the scrape of claws on stone. Shadow-creatures are coming.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Descend the stairs quickly before they reach you",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Stand and fight at the doorway — a narrow chokepoint",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "underground"
+      ]
+    },
+    "scene_012": {
+      "id": "scene_012",
+      "title": "Battle in the Dark",
+      "body": "Steel rings against shadow-claw as you fight for your life in the depths of Ironroot. The wraith-hounds circle and lunge, their forms half-real, half-smoke. Your ranger blade cuts through them, but they reform, slower each time but always returning.\n\nYou are wounded — claw marks burn like frost on your arm — but your training holds. One by one, the creatures dissolve into wisps of dark smoke, their dying shrieks echoing through the tunnels.\n\nWhen it is over, you lean against the cold stone wall, breathing hard. The way forward is clear, but you are weakened.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Use athelas root to heal your wounds before continuing",
+          "target": "scene_017",
+          "conditions": {
+            "has_item": "healing_root"
+          },
+          "effects": {
+            "remove_item": "healing_root",
+            "stat": "valor:4"
+          }
+        },
+        {
+          "text": "Press on despite your wounds — time is short",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "combat"
+      ]
+    },
+    "scene_013": {
+      "id": "scene_013",
+      "title": "The Shadow Dispersed",
+      "body": "Silver light blazes from the amulet — or the ancient words of the scroll thunder through the tunnel — and the wraith-hounds recoil with shrieks of agony. The shadow-stuff of their bodies burns away like fog in sunlight, leaving nothing but a fading stench of sulfur.\n\nThe tunnel ahead is clear now, and your sword's blue glow dims to a gentle pulse. Whatever darkness spawned those creatures, its grip here is broken for a time.\n\nYou notice a side passage you hadn't seen before, revealed as the shadow retreated. Old dwarf-runes mark the entrance: 'Armoury of the Deep Watch.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Explore the hidden armoury",
+          "target": "scene_019",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Continue to the Iron Door",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "underground"
+      ]
+    },
+    "scene_014": {
+      "id": "scene_014",
+      "title": "The Spider's Bargain",
+      "body": "The spider descends slowly, its many eyes fixed on you. You hold out dried meat from your pack and speak in low, calm tones. The creature takes the offering delicately with one foreleg, mandibles clicking.\n\nThen, to your amazement, it speaks — not in words, but in a pattern of clicks and vibrations you somehow understand, the way a Ranger understands the speech of birds.\n\n'Man-thing brings food. Man-thing is not like the shadow-things that taste of nothing. Spider will show man-thing the safe road. Shadow-things fear Spider's tunnels.'\n\nIt turns and begins to climb, trailing a silk thread for you to follow.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 150,
+        "y": 80
+      },
+      "choices": [
+        {
+          "text": "Follow the spider through its tunnels — a shortcut to the deep",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:3",
+            "add_codeword": "SPIDER_FRIEND"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "underground"
+      ]
+    },
+    "scene_015": {
+      "id": "scene_015",
+      "title": "Arachnid Combat",
+      "body": "You strike before the spider can react, your blade biting deep into one of its legs. The creature shrieks — a terrible sound — and drops from the ceiling, legs flailing. Venom drips from its fangs as it lunges at you.\n\nThe fight is brutal and close. In the confined tunnel, the spider's size works against it, but its venom is deadly. You manage to drive your sword through its thorax, and it collapses in a twitching heap.\n\nAmong its web-wrapped treasures, you find the remains of previous victims — and a leather pouch containing a scroll covered in arcane script.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 350,
+        "y": 50
+      },
+      "choices": [
+        {
+          "text": "Take the scroll and continue deeper",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "ancient_scroll",
+            "stat": "valor:-2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "combat",
+        "underground"
+      ]
+    },
+    "scene_016": {
+      "id": "scene_016",
+      "title": "Thandril's Proof",
+      "body": "Thandril nods, unsurprised. 'Wise. A Ranger who trusts too easily does not live long.' He reaches into his robe and produces a silver medallion — the Seal of the Loremaster's Guild, unmistakable. More than that, he speaks the Ranger's watchword — the secret phrase known only to the Duskwatch and their trusted allies.\n\n'Captain Erynn and I have corresponded for months,' he says. 'I warned her the wards would fail. She did not listen in time, but she listened enough to have a plan. You are that plan.'\n\nHe gestures to the fire. 'Now come. Eat. You will need your strength for what lies below.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 700,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Trust verified — join the fellowship",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "story"
+      ]
+    },
+    "scene_017": {
+      "id": "scene_017",
+      "title": "The Forge of Endings",
+      "body": "After hours of descending through tunnels thick with shadow, you reach it: the Forge of Endings. The chamber is vast beyond imagining, carved from the living heart of the mountain. At its centre burns a pillar of white-gold fire — the Forge Eternal, lit by the first dwarves in the Age of Making. It still burns, impossibly, after millennia.\n\nAnd there, on a basalt plinth before the Forge, sits the Shadow Crown. It is a circle of black iron set with a single dark gem that seems to drink in light. Even from here, you can feel it pulling at your mind, whispering promises of power.\n\nBut you are not alone. A figure stands between you and the Crown — tall, gaunt, wrapped in robes of absolute darkness. The Lich-King Morvath. His empty eye sockets burn with pale green fire.\n\n'You are too late, Ranger,' his voice echoes like a tomb closing. 'The Crown calls to its master.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 0
+      },
+      "choices": [
+        {
+          "text": "Rush past Morvath and hurl the Crown into the Forge",
+          "target": "scene_020",
+          "conditions": {
+            "min_stat": "might:8"
+          },
+          "effects": {}
+        },
+        {
+          "text": "Challenge Morvath to single combat",
+          "target": "scene_021",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Use the Amulet of Warding to shield yourself and advance",
+          "target": "scene_020",
+          "conditions": {
+            "has_item": "shadow_amulet"
+          },
+          "effects": {}
+        },
+        {
+          "text": "Call upon your fellowship allies to distract Morvath",
+          "target": "scene_020",
+          "conditions": {
+            "flag": "fellowship:yes"
+          },
+          "effects": {
+            "stat": "valor:3"
+          }
+        },
+        {
+          "text": "Use Morvath's signet ring to break the ancient curse",
+          "target": "scene_curse_broken",
+          "conditions": {
+            "has_item": "morvath_ring",
+            "has_codeword": "TRUTH_KNOWN"
+          },
+          "effects": {
+            "stat": "lore:5"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "boss",
+        "underground",
+        "climax"
+      ]
+    },
+    "scene_018": {
+      "id": "scene_018",
+      "title": "Gareth's Secret",
+      "body": "Gareth glances around, then leans close. 'Aye, I do have something. Found it years ago in the ruins above the old mine.' He reaches under his workbench and pulls out a cloth-wrapped bundle. Inside is a scroll of ancient parchment, covered in flowing script.\n\n'It's a Scroll of Banishment. Old magic — older than the Duskwatch. I've been saving it for a day like this. Take it. If you meet something down there that your sword can't kill...' He doesn't finish the sentence.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 650,
+        "y": 450
+      },
+      "choices": [
+        {
+          "text": "Take the scroll with gratitude and head to the Mine Road",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "ancient_scroll"
+          }
+        },
+        {
+          "text": "Take the scroll and head through the Whispering Forest instead",
+          "target": "scene_003",
+          "conditions": {},
+          "effects": {
+            "add_item": "ancient_scroll"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "indoor",
+        "shop"
+      ]
+    },
+    "scene_019": {
+      "id": "scene_019",
+      "title": "Armoury of the Deep Watch",
+      "body": "The hidden chamber is small but filled with treasures of the old dwarf garrison. Weapons hang on racks, most rusted beyond use, but a few pieces remain in perfect condition, preserved by the dry mountain air and residual enchantment.\n\nYou find a dwarven shield — lighter than it looks, with a boss of mithril — and more importantly, a vial of liquid starlight, a substance the old dwarves distilled to ward off shadow. It could be invaluable against whatever guards the Shadow Crown.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": 250
+      },
+      "choices": [
+        {
+          "text": "Take the shield and starlight vial, then press on deeper",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "add_item": "dwarf_shield",
+            "stat": "might:1"
+          }
+        },
+        {
+          "text": "Take only the starlight vial — travel light",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "treasure",
+        "underground"
+      ]
+    },
+    "scene_020": {
+      "id": "scene_020",
+      "title": "The Crown Destroyed",
+      "body": "Through courage, cunning, or the strength of allies, you reach the basalt plinth. The Shadow Crown seems to scream as your hands close around it — a psychic shriek of fury and despair that nearly shatters your will. Images flood your mind: kingdoms bowing before you, armies at your command, immortality, power beyond measure.\n\nBut you are a Ranger of the Duskwatch. You have sworn an oath. The whispers are just that — whispers.\n\nWith a cry that echoes through the mountain, you hurl the Shadow Crown into the Forge of Endings. The white-gold fire roars to a blinding crescendo. The Crown melts, twists, and is consumed. The dark gem cracks and releases a howl of ancient malice that shakes the very foundations of Ironroot.\n\nMorvath's form wavers and dissolves like smoke. Without the Crown, he is nothing — a memory of evil, fading.\n\nThe shadow retreats. Light returns to the deep places of the world.\n\nYou have won.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 350,
+        "y": -100
+      },
+      "choices": [
+        {
+          "text": "Begin the long climb back to the surface, victorious",
+          "target": "scene_victory",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:5"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "CROWN_DESTROYED"
+        }
+      ],
+      "tags": [
+        "climax",
+        "victory"
+      ]
+    },
+    "scene_021": {
+      "id": "scene_021",
+      "title": "Duel with the Lich-King",
+      "body": "You raise your blade and charge the Lich-King. Morvath's skeletal hand draws a sword of condensed shadow from the air itself — a blade that howls as it swings. Steel meets shadow in an explosion of sparks and dark energy.\n\nThe duel is terrible. Morvath fights with the accumulated skill of a thousand years, and his shadow-blade drains your strength with every parry. But your ranger sword burns with starlight against his darkness, and the fury of the living against the unliving drives you forward.\n\nWith a desperate thrust, you drive your blade through Morvath's chest. For a moment, nothing happens. Then cracks of light spread across his form, and he shatters like black glass.\n\nThe Shadow Crown sits unguarded on its plinth.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": -50
+      },
+      "choices": [
+        {
+          "text": "Seize the Crown and hurl it into the Forge",
+          "target": "scene_020",
+          "conditions": {},
+          "effects": {
+            "stat": "might:-4",
+            "stat2": "valor:3"
+          }
+        },
+        {
+          "text": "Put on the Crown — claim its power for yourself",
+          "target": "scene_dark_ending",
+          "conditions": {},
+          "effects": {
+            "add_item": "shadow_crown"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "boss",
+        "combat",
+        "climax"
+      ]
+    },
+    "scene_victory": {
+      "id": "scene_victory",
+      "title": "Dawn Over Duskhold",
+      "body": "You emerge from the mountain into golden sunlight. The shadow has retreated entirely — the sky is clear for the first time in weeks, and the Ashgate, though broken, no longer seethes with darkness.\n\nCaptain Erynn meets you at the gate, her face breaking into a rare smile. 'It is done, then. I can feel it — the weight has lifted.' The soldiers of the Duskwatch cheer as you pass through. Word spreads quickly: the Shadow Crown is destroyed. The Lich-King is no more.\n\nIn the days that follow, the dwarves begin to rebuild. The elves of the Silverleaf return to their forest. And you, Ranger, have earned a place in the songs that will be sung for generations.\n\nThe shadow is ended. The dawn has come.\n\n--- THE END ---\n\nThank you for playing SHADOWS OF ELDRATH.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 350,
+        "y": -200
+      },
+      "choices": [],
+      "on_enter": [],
+      "tags": [
+        "ending",
+        "victory"
+      ]
+    },
+    "scene_dark_ending": {
+      "id": "scene_dark_ending",
+      "title": "The New Shadow",
+      "body": "The Crown settles on your brow, and the world changes. Power surges through you — intoxicating, limitless. You can see the threads of shadow that connect all dark places, and you can pull them. The wraith-hounds kneel before you. The mountain itself seems to bow.\n\nYou understand now why Morvath sought the Crown. Not for evil's sake, but for this: the power to shape the world. And you could shape it better, couldn't you? A firm hand. A just ruler. Someone who knows the darkness and controls it rather than fears it.\n\nThe Duskwatch will not understand. They will see only the shadow, not the light you intend to bring.\n\nBut they will kneel. In time, they will all kneel.\n\n--- THE END ---\n\nYou have claimed the Shadow Crown. The cycle begins anew.\nThank you for playing SHADOWS OF ELDRATH.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": -150
+      },
+      "choices": [],
+      "on_enter": [],
+      "tags": [
+        "ending",
+        "dark"
+      ]
+    },
+    "scene_030": {
+      "id": "scene_030",
+      "title": "The Traitor's Trail",
+      "body": "Deep within the Ironroot tunnels, you discover marks scratched into the wall — Duskwatch cipher. Someone from your own order has been here before you, leaving a trail. But the marks lead not toward the Forge of Endings, but sideways, into a passage that shouldn't exist.\n\nYou recognize the handwriting. Lieutenant Caelum — your mentor, who disappeared on a scouting mission three months ago. Everyone assumed the shadow took him. But these marks are fresh.\n\nThe trail leads to a hidden chamber where you find Caelum's journal. The final entry chills your blood: 'The Shadow Crown does not corrupt. It reveals. I have seen what the Duskwatch truly guards — not the world from the shadow, but the shadow from the world. We are the jailers, not the protectors. Morvath was a king, once. A good king. What was done to him was the true evil.'\n\nA noise behind you. Caelum steps from the darkness, his ranger cloak torn, his eyes haunted but clear.\n\n'I knew they'd send you,' he says quietly. 'You always were the best of us. That's why I left the trail. You deserve to know the truth before you choose.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 150,
+        "y": -50
+      },
+      "choices": [
+        {
+          "text": "Listen to Caelum's full account of what really happened",
+          "target": "scene_031",
+          "conditions": {},
+          "effects": {
+            "stat": "lore:4",
+            "stat2": "wit:2"
+          }
+        },
+        {
+          "text": "Refuse to listen — he's been compromised by the shadow",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:2"
+          }
+        },
+        {
+          "text": "Ask why he didn't come back to warn the Duskwatch",
+          "target": "scene_032",
+          "conditions": {},
+          "effects": {
+            "stat": "wit:1"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "TRAITOR_TRAIL"
+        }
+      ],
+      "tags": [
+        "underground",
+        "story",
+        "revelation"
+      ]
+    },
+    "scene_031": {
+      "id": "scene_031",
+      "title": "The Truth of the Shadow Crown",
+      "body": "Caelum tells you the history the Duskwatch erased. A thousand years ago, King Morvath ruled Eldrath justly. When he discovered a source of immense power beneath the mountains — raw shadow-essence, neither good nor evil — he fashioned the Crown to harness it, to protect his people from the dragons that plagued the realm.\n\nThe Crown worked. The dragons fled. But the elder mages who had profited from the dragon wars saw their power diminishing. They founded the Duskwatch not to guard against shadow, but to overthrow Morvath. They cursed him, binding his soul to the Crown, transforming him into the undead horror he is now.\n\n'The wards aren't protecting us from Morvath,' Caelum says. 'They're his prison. Every time they weaken, he has a chance to break free — not to conquer, but to end his torment. He's been screaming for a thousand years, and we call it evil.'\n\nHe presses a ring into your hand — Morvath's signet, found in the hidden chamber.\n\n'If you go to the Forge, you have a choice the Duskwatch never wanted you to know about. You can destroy the Crown — or you can break the curse.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": -120
+      },
+      "choices": [
+        {
+          "text": "Take the ring and continue to the Forge with this new knowledge",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {
+            "add_item": "morvath_ring",
+            "stat": "lore:3",
+            "add_codeword": "TRUTH_KNOWN"
+          }
+        },
+        {
+          "text": "This changes nothing — Morvath is still dangerous",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {
+            "stat": "valor:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "revelation",
+        "lore"
+      ]
+    },
+    "scene_032": {
+      "id": "scene_032",
+      "title": "Caelum's Confession",
+      "body": "Caelum's face falls. 'I tried. Three times I approached the wall, and three times the wards turned me back. The elder mages who built the Duskwatch wove a compulsion into the wards — no one who knows the truth can cross them. I'm trapped down here as surely as Morvath.'\n\nHe shows you his hands — scarred with warding burns. 'The only way the truth gets out is if someone learns it after they've already passed through the wards. Someone like you.'\n\nHe gives you his journal, his shadow lantern, and the last of his supplies — a coil of elven rope and a healing draught.\n\n'The Forge is close. Whatever you decide — destroy the Crown or break the curse — at least you'll choose with open eyes. That's more than any Ranger has had in a millennium.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": -120
+      },
+      "choices": [
+        {
+          "text": "Take his supplies and press on to the Forge",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {
+            "add_item": "shadow_lantern",
+            "add_item2": "elven_rope",
+            "add_item3": "healing_draught",
+            "stat": "lore:3",
+            "add_codeword": "CAELUM_TRUST"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "ally"
+      ]
+    },
+    "scene_curse_broken": {
+      "id": "scene_curse_broken",
+      "title": "The Curse Broken",
+      "body": "You hold the signet ring aloft before the tormented figure of Morvath. His hollow eyes fix on it — and for the first time in a thousand years, recognition flickers in those green flames.\n\n'My ring,' he whispers, and his voice is not the voice of a Lich-King. It is the voice of a tired old man who has suffered beyond all measure. 'You know. Someone finally knows.'\n\nYou speak the words Caelum taught you — the counter-incantation, the reversal of the ancient curse. The Crown cracks. Not in destruction, but in release. The shadow-essence flows back into the mountain, where it belongs. The black iron crumbles to dust.\n\nMorvath's form changes. The green fire fades. For one shining moment, you see him as he was: a king in his prime, armored in silver, tears streaming down his face.\n\n'Thank you,' he says. And then he is gone — not destroyed, but freed. A thousand years of suffering, ended.\n\nThe mountain is quiet. The shadow recedes. And you carry with you a truth that will change the Duskwatch forever.\n\n--- THE END ---\n\nYou have broken the ancient curse and freed King Morvath.\nThank you for playing SHADOWS OF ELDRATH.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 450,
+        "y": -250
+      },
+      "choices": [],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "CURSE_BROKEN"
+        }
+      ],
+      "tags": [
+        "ending",
+        "redemption"
+      ]
+    }
+  },
+  "achievements": {
+    "first_ending": {
+      "name": "Tale Concluded",
+      "hint": "Reach any ending — light or shadow."
+    },
+    "victor": {
+      "name": "Bearer of the Crown",
+      "hint": "Destroy the Shadow Crown beneath the Ironroot."
+    },
+    "fallen": {
+      "name": "Lost to Darkness",
+      "hint": "Fall to the shadow that creeps beyond the gate."
+    },
+    "completionist": {
+      "name": "Scribe of Eldrath",
+      "hint": "Witness every scene the chronicle has to offer."
+    },
+    "collector": {
+      "name": "Hoarder of Hope",
+      "hint": "Find every artefact, weapon, and trinket."
+    },
+    "lucky": {
+      "name": "Fortune's Favourite",
+      "hint": "Pass every die-roll on a single run."
+    },
+    "dwarf_friend": {
+      "name": "Friend of the Forge",
+      "hint": "Earn the trust of the dwarves of Karak Dun."
+    }
+  }
+}

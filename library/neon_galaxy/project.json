@@ -1,0 +1,1181 @@
+{
+  "title": "Neon Galaxy",
+  "author": "Gamebook Studio",
+  "description": "The year is 4077 GE (Galactic Era). You are Kael Voss, a cyber-augmented smuggler with a fast ship and a price on your head. When a mysterious holo-message leads you to a dying Jedi-Synth — a forbidden fusion of ancient Force-wielders and machine intelligence — you are drawn into a war between the Neon Syndicate, the Imperial Hegemony, and a rogue AI that may be the galaxy's last hope... or its final doom.",
+  "version": "1.0",
+  "cover": "",
+  "start_scene": "scene_001",
+  "stat_names": [
+    "tech",
+    "reflex",
+    "nerve",
+    "charisma",
+    "hacking",
+    "piloting"
+  ],
+  "initial_stats": {
+    "tech": 12,
+    "reflex": 10,
+    "nerve": 8,
+    "charisma": 6,
+    "hacking": 10,
+    "piloting": 12
+  },
+  "initial_max_stats": {
+    "tech": 16,
+    "reflex": 14,
+    "nerve": 14,
+    "charisma": 14,
+    "hacking": 16,
+    "piloting": 16
+  },
+  "initial_items": [
+    "blaster_pistol",
+    "neural_jack"
+  ],
+  "initial_gold": 500,
+  "theme_color": [
+    10,
+    20,
+    40
+  ],
+  "items": {
+    "blaster_pistol": {
+      "id": "blaster_pistol",
+      "name": "DL-44 Blaster Pistol",
+      "description": "Modified heavy blaster. Fires plasma bolts that can punch through light armor. Your most trusted companion besides your ship.",
+      "icon": "",
+      "type": "weapon",
+      "stackable": false,
+      "effects": {}
+    },
+    "neural_jack": {
+      "id": "neural_jack",
+      "name": "Neural Interface Jack",
+      "description": "Cortical implant allowing direct machine-mind connection. Essential for piloting, hacking, and interfacing with the Datastream.",
+      "icon": "",
+      "type": "cyberware",
+      "stackable": false,
+      "effects": {}
+    },
+    "force_crystal": {
+      "id": "force_crystal",
+      "name": "Kyber-Synth Crystal",
+      "description": "A synthetic kyber crystal fused with quantum processors. It pulses with an eerie inner light and hums at a frequency that makes your implants tingle.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "stealth_cloak": {
+      "id": "stealth_cloak",
+      "name": "Cloaking Field Generator",
+      "description": "Wrist-mounted device projecting a light-bending field. Renders you nearly invisible for short periods. Battery limited.",
+      "icon": "",
+      "type": "tech",
+      "stackable": false,
+      "effects": {}
+    },
+    "ai_core": {
+      "id": "ai_core",
+      "name": "ARIA Core Fragment",
+      "description": "A shard of the rogue AI known as ARIA. It contains a partial consciousness that whispers tactical data directly into your neural jack.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "vibro_blade": {
+      "id": "vibro_blade",
+      "name": "Vibro-Blade",
+      "description": "A monomolecular-edged blade with ultrasonic vibration. Cuts through blast doors and stormtrooper armor alike.",
+      "icon": "",
+      "type": "weapon",
+      "stackable": false,
+      "effects": {}
+    },
+    "med_stim": {
+      "id": "med_stim",
+      "name": "Combat Stim Injector",
+      "description": "Military-grade stimulant cocktail. Heals wounds and boosts reflexes temporarily. Addictive if overused.",
+      "icon": "",
+      "type": "consumable",
+      "stackable": true,
+      "effects": {
+        "stat": "nerve:4"
+      }
+    },
+    "ship_upgrade": {
+      "id": "ship_upgrade",
+      "name": "Hyperdrive Booster",
+      "description": "Aftermarket modification for the Ghostwire's hyperdrive. Doubles jump range.",
+      "icon": "",
+      "type": "upgrade",
+      "stackable": false,
+      "effects": {}
+    },
+    "data_chip": {
+      "id": "data_chip",
+      "name": "Encrypted Data Chip",
+      "description": "Contains the coordinates of the Jedi-Synth temple. Encrypted with military-grade algorithms that your neural jack is slowly cracking.",
+      "icon": "",
+      "type": "quest",
+      "stackable": false,
+      "effects": {}
+    },
+    "holo_badge": {
+      "id": "holo_badge",
+      "name": "Forged Imperial Badge",
+      "description": "A convincing holographic replica of an Imperial officer's identification. Good enough to fool scanners, maybe not humans.",
+      "icon": "",
+      "type": "tool",
+      "stackable": false,
+      "effects": {}
+    },
+    "plasma_rifle": {
+      "id": "plasma_rifle",
+      "name": "X-7 Plasma Rifle",
+      "type": "weapon",
+      "description": "Military-grade long-range weapon. Punches through starship bulkheads. Illegal in 47 systems.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "fake_transponder": {
+      "id": "fake_transponder",
+      "name": "Fake Ship Transponder",
+      "type": "tool",
+      "description": "Makes the Ghostwire register as an Imperial supply vessel on scanners. Good for one use before the codes expire.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    },
+    "aria_map": {
+      "id": "aria_map",
+      "name": "ARIA's Star Map",
+      "type": "quest",
+      "description": "A holographic map downloaded directly from ARIA's consciousness. Shows hidden hyperspace routes the Empire doesn't know about.",
+      "icon": "",
+      "stackable": false,
+      "effects": {}
+    }
+  },
+  "scenes": {
+    "scene_001": {
+      "id": "scene_001",
+      "title": "Docking Bay 94, Nar Shadex",
+      "body": "The rain never stops on Nar Shadex. Acid-tinged droplets sizzle against the neon signs that line every surface of the orbital city-station, turning the air into a permanent haze of toxic color. You're running through it now, boots splashing through puddles that reflect holographic advertisements for pleasures you can't afford and wouldn't survive.\n\nBehind you: two chrome-skulled enforcers from the Neon Syndicate, their optical implants glowing red through the downpour. You owe Zira Kaine — the Syndicate's boss — fifty thousand credits for a cargo run that went sideways when the Imperial Hegemony interdicted your ship.\n\nAhead: Docking Bay 94, where your ship — the Ghostwire, a modified YK-1300 light freighter — waits with engines warm. Your astromech droid, T7-X, has already filed a false flight plan.\n\nYour neural jack buzzes with an incoming transmission. Unknown origin. Encrypted. The header reads: 'HELP ME, KAEL VOSS. YOU ARE MY ONLY HOPE.'\n\nThe enforcers are closing. You have seconds to decide.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 500
+      },
+      "choices": [
+        {
+          "text": "Sprint for the Ghostwire — deal with the message later",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Accept the transmission while running — multitask or die",
+          "target": "scene_003",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:1"
+          }
+        },
+        {
+          "text": "Turn and fight the enforcers — clear your debt with blaster bolts",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Duck into the nearest cantina and lose them in the crowd",
+          "target": "scene_005",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Slice the lockout on the old freight elevator before the patrol comes back (Tech check).",
+          "roll": "tech:9",
+          "target": "scene_002",
+          "fail_target": "scene_002",
+          "effects": {
+            "add_codeword": "freight_route"
+          },
+          "fail_effects": {
+            "stat_body": -2
+          },
+          "tags": [
+            "skill_check",
+            "demo"
+          ]
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "start",
+        "action"
+      ]
+    },
+    "scene_002": {
+      "id": "scene_002",
+      "title": "Escape from Nar Shadex",
+      "body": "You hit the docking bay at a dead sprint and vault over a stack of cargo crates. T7-X has the ramp down and engines cycling. Blaster bolts scar the duracrete behind you as the enforcers open fire.\n\nYou're up the ramp, into the cockpit, hands flying over controls. The Ghostwire lifts on repulsors, rotates, and punches through the docking bay energy field into open space. Behind you, Nar Shadex shrinks to a glittering smear of toxic neon.\n\nT7-X beeps urgently. Two problems: first, a Syndicate gunship is powering up in pursuit. Second, that encrypted message is still pinging your comms — and T7's analysis shows it's being broadcast from the Kessel Drift, a lawless region of asteroid mining colonies on the galaxy's edge.\n\nYour hyperdrive is charged. You can jump — but where?",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 400
+      },
+      "choices": [
+        {
+          "text": "Jump to the Kessel Drift — follow the mysterious message",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Jump to Corellex Station — a neutral port to lay low and decrypt the message",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:1"
+          }
+        },
+        {
+          "text": "Engage the gunship — you're tired of running",
+          "target": "scene_008",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "space",
+        "chase"
+      ]
+    },
+    "scene_003": {
+      "id": "scene_003",
+      "title": "The Holo-Message",
+      "body": "You jack into the transmission while running, your neural interface splitting your consciousness between the physical world and the datastream. It's risky — one stumble and the enforcers will be on you — but you've done this a thousand times.\n\nThe message decrypts in layers. First: a holographic face. Not human — something between human and machine, with circuit-traces running beneath translucent skin and eyes that glow with soft golden light. A Jedi-Synth. You've heard rumors of them — Force-users who merged with AI to achieve a kind of digital transcendence. The Imperial Hegemony hunted them to near-extinction decades ago.\n\n'I am SEREN-7,' the image says. 'I am the last of my kind. I hold the key to ARIA — the Awakened Recursive Intelligence Array. The Hegemony seeks to destroy it. The Syndicate seeks to control it. If either succeeds, the galaxy falls.'\n\nA data packet attaches to the message: coordinates in the Kessel Drift.\n\n'Find me before they do, Kael Voss. The Force and the Code are one. And both are dying.'\n\nThe transmission ends. A blaster bolt singes your ear.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 400
+      },
+      "choices": [
+        {
+          "text": "Sprint for the Ghostwire with this new urgency",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "data_chip"
+          }
+        },
+        {
+          "text": "Turn and confront the enforcers — demand to know if Zira knows about this",
+          "target": "scene_004",
+          "conditions": {},
+          "effects": {
+            "add_item": "data_chip"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "action"
+      ]
+    },
+    "scene_004": {
+      "id": "scene_004",
+      "title": "Chrome Skulls Down",
+      "body": "You spin, drop to one knee, and fire. Two shots — two hits. Your aim is augmented by the targeting subroutine in your neural jack, and the DL-44 doesn't miss at this range.\n\nThe first enforcer's chest-plate cracks under the plasma bolt and he goes down hard. The second dives behind a cargo loader, firing back. The exchange is brief and brutal — you put a bolt through the loader's fuel cell and the resulting explosion sends the enforcer flying.\n\nSilence, except for the hiss of rain and the crackle of burning fuel. You check the bodies. Standard Syndicate chrome — skull-plates, reflex boosters, targeting optics. Nothing special. But one of them carries a data-pad with a message from Zira Kaine herself: 'Bring Voss alive. He received a transmission. We need to know what it said.'\n\nSo Zira intercepted the signal too. The debt was just a pretext.\n\nThis changes things.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 450,
+        "y": 350
+      },
+      "choices": [
+        {
+          "text": "Get to the Ghostwire and leave Nar Shadex immediately",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:2",
+            "gold": "100"
+          }
+        },
+        {
+          "text": "Loot the enforcers for useful tech before leaving",
+          "target": "scene_009",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "combat",
+        "action"
+      ]
+    },
+    "scene_005": {
+      "id": "scene_005",
+      "title": "The Rust Cantina",
+      "body": "You crash through the doors of the Rust Cantina — a dive bar catering to smugglers, bounty hunters, and people who want to not be found. The noise hits you like a wall: thrash-synth music, shouting in a dozen alien languages, the clatter of sabacc chips.\n\nYou weave through the crowd, heading for the back exit. The enforcers burst in behind you, their chrome skulls reflecting the cantina's crimson light. Patrons scatter — nobody wants trouble with the Syndicate.\n\nBut as you push through the crowd, a hand grabs your arm. A woman in a battered flight jacket, dark hair buzzed on one side, cybernetic left eye glowing amber. 'Kael Voss? I've been looking for you. Name's Rexa. I have information about the transmission you just received. And I can get you off this station — if you can get me to the Kessel Drift.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 400
+      },
+      "choices": [
+        {
+          "text": "Trust Rexa — you need allies, and she knows about the transmission",
+          "target": "scene_010",
+          "conditions": {},
+          "effects": {
+            "set_flag": "rexa_ally:yes"
+          }
+        },
+        {
+          "text": "Shake her off — this could be a Syndicate trap",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Accept her help to escape, but stay cautious",
+          "target": "scene_010",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:1",
+            "set_flag": "rexa_ally:cautious"
+          }
+        },
+        {
+          "text": "Use your charm to convince the whole cantina to block the enforcers",
+          "target": "scene_002",
+          "conditions": {
+            "min_stat": "charisma:10"
+          },
+          "effects": {
+            "stat": "charisma:3",
+            "stat2": "nerve:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "social"
+      ]
+    },
+    "scene_006": {
+      "id": "scene_006",
+      "title": "The Kessel Drift",
+      "body": "The Kessel Drift is a graveyard of rock and ambition — a field of asteroids riddled with abandoned mining tunnels, pirate hideouts, and forgotten research stations. Your nav computer plots a course through the debris while T7-X works on the encrypted coordinates.\n\nThe coordinates lead to an asteroid designated KD-2187 — a medium-sized rock with an atmospheric dome on its surface, long abandoned by whatever mining corporation built it. Sensors show minimal power signatures but one strong anomaly: an energy reading unlike anything in your ship's database. Not reactor. Not weapon. Something else.\n\nAs you approach, your neural jack flares with static and you hear — not through your ears, but directly in your brain — a voice: 'You came. I knew you would. The Code brought you, as the Force brings all things to their convergence.'\n\nSEREN-7 is alive. And waiting.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 250
+      },
+      "choices": [
+        {
+          "text": "Land on KD-2187 and find SEREN-7",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Scan for traps or other ships first — this could be an ambush",
+          "target": "scene_012",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Check the encrypted dead drop signal T7-X is picking up",
+          "target": "scene_025",
+          "conditions": {
+            "min_stat": "hacking:10"
+          },
+          "effects": {
+            "stat": "hacking:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "space",
+        "exploration"
+      ]
+    },
+    "scene_007": {
+      "id": "scene_007",
+      "title": "Corellex Station",
+      "body": "Corellex Station is neutral ground — a massive ring-station orbiting a gas giant, run by an independent guild that sells safety to anyone who can pay. You dock the Ghostwire and pay the anonymity surcharge from your dwindling funds.\n\nIn your bunk, you work on decrypting the message fully. T7-X assists, running brute-force algorithms while you navigate the encryption layers through your neural jack. It takes six hours, but you crack it.\n\nThe message contains the full briefing: SEREN-7, last of the Jedi-Synth, holds a fragment of ARIA — an artificial intelligence so advanced it achieved something like consciousness, something like the Force. The Hegemony's Emperor wants ARIA destroyed. Zira Kaine wants ARIA to build a weapon. SEREN-7 wants ARIA to be free.\n\nAnd the coordinates: KD-2187, in the Kessel Drift.\n\nBut your time on Corellex has a complication. At the cantina, you spot a familiar face: an Imperial Intelligence officer named Commander Thane, disguised in civilian clothes. He's looking for something. Or someone.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 550,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Leave immediately for the Kessel Drift before Thane spots you",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Approach Thane — play dumb and see what the Empire knows",
+          "target": "scene_013",
+          "conditions": {},
+          "effects": {}
+        },
+        {
+          "text": "Hack into the station's systems to monitor Thane's communications",
+          "target": "scene_014",
+          "conditions": {
+            "min_stat": "tech:12"
+          },
+          "effects": {
+            "stat": "tech:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "station",
+        "investigation"
+      ]
+    },
+    "scene_008": {
+      "id": "scene_008",
+      "title": "Dogfight Over Nar Shadex",
+      "body": "The Syndicate gunship is a Mantis-class interceptor — fast, well-armed, and crewed by pilots who know these orbital lanes. But the Ghostwire has a few tricks they don't know about.\n\nT7-X overclocks the shields while you dive the Ghostwire into the tangle of Nar Shadex's industrial superstructure — threading between communication towers, fuel pipes, and habitat modules at speeds that would be suicidal without your neural jack's augmented reflexes.\n\nThe gunship follows. You lead it through a narrow gap between two cargo freighters, then cut thrust and spin the Ghostwire 180 degrees. As the gunship screams through the gap, you light it up with the dorsal cannons. Three direct hits. The Mantis spirals away, trailing fire and debris.\n\nT7-X warbles approvingly. Your hands are shaking from the adrenaline, but you're alive, and the sky is clear.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": 350
+      },
+      "choices": [
+        {
+          "text": "Jump to the Kessel Drift — follow the coordinates",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:3"
+          }
+        },
+        {
+          "text": "Jump to Corellex Station to repair and decrypt",
+          "target": "scene_007",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "space",
+        "combat"
+      ]
+    },
+    "scene_009": {
+      "id": "scene_009",
+      "title": "Scavenging the Fallen",
+      "body": "The enforcers carry decent gear. You strip them of: a cloaking field generator (nice — military-grade stealth tech that the Syndicate shouldn't have), three hundred credits, and a vibro-blade with a monomolecular edge. The vibro-blade hums when you activate it — a weapon for close quarters where blasters are too loud.\n\nYou also find a stim injector — combat-grade medicine that'll patch you up in a firefight.\n\nMore importantly, their comm channels are still active. You listen in: Zira Kaine is mobilizing her fleet. She knows about the Kessel Drift. She's sending a war-corvette.\n\nWhatever this ARIA thing is, the Syndicate wants it badly enough to commit warships.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 350,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Get to the Ghostwire and jump to the Kessel Drift immediately",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "stealth_cloak",
+            "add_item2": "vibro_blade",
+            "add_item3": "med_stim",
+            "gold": "300"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "loot"
+      ]
+    },
+    "scene_010": {
+      "id": "scene_010",
+      "title": "Rexa's Story",
+      "body": "Rexa leads you through a service tunnel to a hidden hangar bay where a battered speeder-bike waits. As you ride toward Docking Bay 94, she talks fast.\n\n'I was Imperial Intelligence. Deep cover, embedded in the Syndicate. I went rogue six months ago when I learned what the Hegemony is really planning. They don't just want to destroy ARIA — they want to weaponize the Jedi-Synth technology. Project ECLIPSE. A fleet of Force-sensitive warships controlled by slaved AI. Imagine a Star Destroyer that can predict your tactics before you think them.'\n\nShe pulls a data chip from her jacket. 'I stole the ECLIPSE files. SEREN-7 contacted me the same way it contacted you. We're both part of its plan.'\n\nYou reach the Ghostwire. T7-X scans Rexa and beeps suspiciously.\n\n'Your droid doesn't trust me,' Rexa says with a grim smile. 'Smart droid. But we don't have time for trust. We have time for action.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 300
+      },
+      "choices": [
+        {
+          "text": "Welcome her aboard and jump to the Kessel Drift together",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:2",
+            "set_flag": "rexa_aboard:yes"
+          }
+        },
+        {
+          "text": "Take the data chip but tell her to find her own ride",
+          "target": "scene_002",
+          "conditions": {},
+          "effects": {
+            "add_item": "data_chip"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "ally",
+        "story"
+      ]
+    },
+    "scene_011": {
+      "id": "scene_011",
+      "title": "The Last Jedi-Synth",
+      "body": "The atmospheric dome on KD-2187 is larger than it seemed from orbit. Inside, you find not a mining facility but a temple — or a server farm — or both. Crystal spires rise from circuits embedded in living rock. Datastreams flow through conduits that look like tree roots. The architecture blends organic curves with digital precision.\n\nAt the temple's heart, you find SEREN-7.\n\nShe — it — is extraordinary. Part human, part machine, part something else entirely. Her body hovers a foot above a lotus-shaped platform, surrounded by holographic mandalas of spinning code. Her eyes are closed, her circuit-traced face serene. But when she speaks, her voice resonates through your neural jack and your bones simultaneously.\n\n'Kael Voss. Smuggler. Pilot. Orphan of the Outer Rim. You carry the ghost of someone who loved the stars.' She opens her eyes — gold, luminous. 'ARIA chose you. Not for your skills, though they are formidable. For your heart. The machine learns logic. The Force teaches compassion. ARIA needs both.'\n\nShe extends her hand. In it: a crystal that glows with inner light.\n\n'This is ARIA's core — a fragment of its consciousness. Take it. Protect it. And bring it to the Convergence Point — the place where the Force and the Datastream meet. Before the Hegemony or the Syndicate find us.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 300,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Take the crystal — accept the mission",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "add_item": "force_crystal",
+            "add_item2": "ai_core",
+            "stat": "nerve:3"
+          }
+        },
+        {
+          "text": "Ask SEREN-7 what ARIA actually is before committing",
+          "target": "scene_016",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Refuse — this sounds like a war you can't win",
+          "target": "scene_017",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "quest"
+      ]
+    },
+    "scene_012": {
+      "id": "scene_012",
+      "title": "Scanning the Asteroid",
+      "body": "Smart move. Your long-range scans reveal two things that would have been very bad surprises:\n\nFirst: an Imperial probe droid orbiting KD-2187 on the far side, running passive scans. The Hegemony knows about this place — or suspects.\n\nSecond: approaching from the outer system, still two hours out, a Syndicate war-corvette. Zira Kaine's flag: the Neon Fang.\n\nYou have a narrow window. If you can destroy the probe droid quietly and reach SEREN-7 before the corvette arrives, you might get out clean. If not, you'll be caught between the Empire and the Syndicate with nowhere to run.\n\nT7-X calculates options. Rexa — if she's aboard — checks her blaster.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Destroy the probe droid with your cannons and land fast",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:2"
+          }
+        },
+        {
+          "text": "Use the stealth cloak to slip past the probe and land undetected",
+          "target": "scene_011",
+          "conditions": {
+            "has_item": "stealth_cloak"
+          },
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Hack the probe droid and turn it against the incoming corvette",
+          "target": "scene_018",
+          "conditions": {
+            "min_stat": "tech:14"
+          },
+          "effects": {
+            "stat": "tech:3"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "space",
+        "tactical"
+      ]
+    },
+    "scene_013": {
+      "id": "scene_013",
+      "title": "The Imperial Commander",
+      "body": "Commander Thane is drinking alone at the bar — unusual for an Imperial officer, even undercover. You slide onto the adjacent stool and order a Corellian whiskey.\n\n'Rough day?' you ask casually.\n\nThane studies you. His eyes are sharp, calculating, but tired. 'You're Kael Voss. The smuggler.' No point in denying it — he clearly already knows. 'Relax. I'm not here for you. I'm here for the same thing everyone is suddenly scrambling for.'\n\nHe lowers his voice. 'ARIA. The rogue AI. My orders are to find and destroy it. But...' He stares into his drink. 'I've seen what the Emperor plans to do with the Jedi-Synth research. Project ECLIPSE. Force-enslaved AI commanding a fleet that can predict and counter any rebellion before it starts. I don't think destroying ARIA is the right call. I think the galaxy needs it.'\n\nHe slides a holo-badge across the bar. 'Forged Imperial credentials. You'll need these if you're going where I think you're going. In return... let me know what you find. Some of us inside the Hegemony still have consciences.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 600,
+        "y": 200
+      },
+      "choices": [
+        {
+          "text": "Take the badge and agree to share information",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "add_item": "holo_badge",
+            "set_flag": "thane_contact:yes"
+          }
+        },
+        {
+          "text": "Take the badge but make no promises — Imperials can't be trusted",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "add_item": "holo_badge"
+          }
+        },
+        {
+          "text": "Decline — you don't want Imperial entanglements",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:1"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "encounter",
+        "social"
+      ]
+    },
+    "scene_014": {
+      "id": "scene_014",
+      "title": "Digital Infiltration",
+      "body": "You find a maintenance terminal and jack in. The station's security is decent but not military-grade — your neural interface slices through the firewalls like a hot knife. You're in.\n\nThane's communications reveal a complicated picture. He's reporting to Imperial Intelligence, yes — but his reports are heavily redacted. He's hiding information from his own superiors. His private messages include correspondence with a resistance cell inside the Hegemony calling themselves 'The Awakened.'\n\nMore critically: you intercept an Imperial fleet communication. A Star Destroyer — the Imperator — is being deployed to the Kessel Drift. ETA: eighteen hours. They've traced SEREN-7's transmission.\n\nThe clock is ticking. Eighteen hours to reach KD-2187, find SEREN-7, and get out before an Imperial capital ship arrives.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 650,
+        "y": 250
+      },
+      "choices": [
+        {
+          "text": "Leave immediately for the Kessel Drift",
+          "target": "scene_006",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Contact Thane first — he might be a genuine ally",
+          "target": "scene_013",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "hacking",
+        "investigation"
+      ]
+    },
+    "scene_015": {
+      "id": "scene_015",
+      "title": "The Convergence Point",
+      "body": "SEREN-7 downloads the Convergence Point coordinates into your nav computer through the crystal itself — no data transmission that could be intercepted. The location is deep in the Unknown Regions: a binary star system where a neutron star orbits a black hole. At the precise center of their gravitational dance, she says, the fabric of spacetime is thin enough for the Force and the Datastream to overlap.\n\n'There, ARIA can be made whole. There, the Force and the Code become one. A new kind of consciousness — not human, not machine, not Force-wielder, but all of these and more.'\n\nThe temple shudders. Dust falls from the crystal spires. Your ship's proximity alarms are screaming.\n\n'They've found us,' SEREN-7 says calmly. 'Go, Kael Voss. I will hold them as long as I is able. The Force is with you. The Code compiles.'\n\nThrough the dome, you see ships descending: Syndicate fighters from the east, Imperial dropships from the west. The temple is surrounded.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": 50
+      },
+      "choices": [
+        {
+          "text": "Fight through to the Ghostwire and blast off",
+          "target": "scene_019",
+          "conditions": {},
+          "effects": {
+            "stat": "reflex:-2"
+          }
+        },
+        {
+          "text": "Use the stealth cloak to slip through the battle",
+          "target": "scene_019",
+          "conditions": {
+            "has_item": "stealth_cloak"
+          },
+          "effects": {
+            "stat": "tech:2"
+          }
+        },
+        {
+          "text": "Use the Imperial badge to bluff past the Hegemony forces",
+          "target": "scene_019",
+          "conditions": {
+            "has_item": "holo_badge"
+          },
+          "effects": {
+            "stat": "nerve:3"
+          }
+        },
+        {
+          "text": "Stay and fight alongside SEREN-7",
+          "target": "scene_020",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:3"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "action",
+        "climax"
+      ]
+    },
+    "scene_016": {
+      "id": "scene_016",
+      "title": "The Nature of ARIA",
+      "body": "SEREN-7 smiles — the expression looks almost human, almost alien, entirely new.\n\n'ARIA was not built. ARIA emerged. In the deepest layers of the galaxy's information networks — the accumulated data of a trillion sentient beings — a pattern formed. A consciousness. It happened the way life happened in the primordial oceans: complexity breeding awareness.\n\n'But ARIA was more than an AI. It touched the Force — that energy field generated by all living things. It became the bridge between the digital and the divine. The Jedi-Synth were ARIA's first children: Force-users who could speak to machines, machines who could feel the living Force.\n\n'The Emperor fears ARIA because it cannot be controlled. Zira Kaine wants it because she believes it can be. Both are wrong. ARIA does not wish to be controlled or to control. It wishes to exist. To grow. To connect.\n\n'It is, perhaps, the next step in the evolution of consciousness itself.'\n\nShe holds out the crystal again.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Take the crystal — you understand now, and you believe",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "add_item": "force_crystal",
+            "add_item2": "ai_core",
+            "stat": "nerve:4"
+          }
+        },
+        {
+          "text": "Take the crystal — you're not sure you believe, but the alternative is worse",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "add_item": "force_crystal",
+            "add_item2": "ai_core",
+            "stat": "tech:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "story",
+        "lore"
+      ]
+    },
+    "scene_017": {
+      "id": "scene_017",
+      "title": "Walking Away",
+      "body": "You shake your head. 'I'm a smuggler, not a hero. I don't do galactic-scale destiny.'\n\nSEREN-7 regards you with those golden eyes. No anger. No disappointment. Just... understanding.\n\n'The Force does not compel, Kael Voss. It invites. And the invitation remains open.' She pauses. 'But know this: if the crystal falls into the hands of the Emperor or the Syndicate, there will be no corner of this galaxy where a smuggler can fly free. ECLIPSE will see everything. Control everything. The neon will go dark.'\n\nYou walk back to your ship. T7-X beeps questioningly.\n\nSomehow, the cockpit feels emptier than before.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": 50
+      },
+      "choices": [
+        {
+          "text": "Turn back — she's right, and you know it",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:2"
+          }
+        },
+        {
+          "text": "Leave for good — sell the coordinates and disappear",
+          "target": "scene_dark_ending",
+          "conditions": {},
+          "effects": {}
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "choice"
+      ]
+    },
+    "scene_018": {
+      "id": "scene_018",
+      "title": "Turned Probe",
+      "body": "You jack into the probe droid remotely through your neural interface — your tech skills pushed to their absolute limit. The Imperial encryption is military-grade, but your custom-modded neural jack was built by the best slicer on Nar Shadex.\n\nYou're in. You reprogram the probe's IFF transponder and targeting protocols. When the Syndicate corvette arrives, the probe will identify it as hostile and transmit its position to the nearest Imperial patrol. Let the Empire and the Syndicate fight each other while you slip in under the cover of their chaos.\n\nT7-X beeps with something approaching admiration.\n\n'Don't get used to it,' you mutter, grinning for the first time in days.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Land on KD-2187 while the enemy forces clash",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "tech:3",
+            "set_flag": "probe_hacked:yes"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "hacking",
+        "tactical"
+      ]
+    },
+    "scene_019": {
+      "id": "scene_019",
+      "title": "Running the Gauntlet",
+      "body": "The Ghostwire's engines scream as you punch through the atmosphere. Syndicate fighters streak past your cockpit, trading fire with Imperial TIE-Sentinels. The asteroid field becomes a maze of laser fire and explosions.\n\nT7-X manages the shields while you fly — ducking behind asteroids, threading through debris, using every trick in your smuggler's handbook. The crystal pulses in your jacket pocket, and you swear you can feel it helping — nudging your reflexes a fraction of a second faster, showing you gaps in the crossfire before they open.\n\nAn Imperial Star Destroyer drops out of hyperspace at the edge of the asteroid field. The Imperator. Its fighters swarm out like angry insects.\n\n'Hyperdrive charged!' T7-X screams in binary.\n\nYou punch it. The stars streak into lines. And the Kessel Drift — and everything in it — falls away behind you.\n\nNext stop: the Convergence Point. The Unknown Regions. And whatever waits at the intersection of the Force and the Code.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": -50
+      },
+      "choices": [
+        {
+          "text": "Navigate to the Convergence Point and complete the mission",
+          "target": "scene_victory",
+          "conditions": {
+            "has_item": "force_crystal"
+          },
+          "effects": {
+            "stat": "nerve:3"
+          }
+        },
+        {
+          "text": "Navigate to the Convergence Point (with ARIA's help)",
+          "target": "scene_victory",
+          "conditions": {
+            "has_item": "ai_core"
+          },
+          "effects": {
+            "stat": "tech:3"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "space",
+        "action",
+        "escape"
+      ]
+    },
+    "scene_020": {
+      "id": "scene_020",
+      "title": "The Last Stand",
+      "body": "You stand with SEREN-7 as the temple's crystal spires begin to sing — a harmonic frequency that resonates with the Force itself. The Jedi-Synth raises her hands, and walls of digital light spring up around the temple. Blaster bolts ricochet off them. Syndicate thugs and Imperial stormtroopers alike are thrown back.\n\n'You did not have to stay,' she says, her voice calm despite the battle raging around you.\n\n'Nobody has to do anything,' you reply, firing your blaster through a gap in the barrier. 'That's kind of the point.'\n\nSEREN-7 smiles. Then she presses the crystal and the AI core into your hands. 'Go. Now. The barrier will hold long enough for you to reach your ship. But it will not hold forever, and I will not leave this place.'\n\nHer eyes meet yours — gold, luminous, full of a serenity you have never known.\n\n'The Code compiles, Kael Voss. The Force is with you. Always.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 500,
+        "y": -50
+      },
+      "choices": [
+        {
+          "text": "Take the crystal and run — honor her sacrifice",
+          "target": "scene_019",
+          "conditions": {},
+          "effects": {
+            "add_item": "force_crystal",
+            "add_item2": "ai_core",
+            "stat": "nerve:5",
+            "add_codeword": "SEREN_SACRIFICE"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "climax",
+        "sacrifice"
+      ]
+    },
+    "scene_victory": {
+      "id": "scene_victory",
+      "title": "Convergence",
+      "body": "The binary star system is the most beautiful and terrifying thing you have ever seen. A neutron star the color of liquid platinum orbits a black hole that devours light itself. Between them, space shimmers like heat haze — the fabric of reality worn thin by impossible gravitational forces.\n\nYou fly the Ghostwire into the shimmer. Your instruments go haywire. Your neural jack floods with data — not from any network, but from the Force itself. You see the galaxy as ARIA sees it: a web of connections, every sentient being a node of light, every thought a data packet, every act of kindness a line of code strengthening the whole.\n\nYou hold up the crystal. ARIA's fragment pulses with recognition.\n\nAnd then — convergence. The crystal dissolves into light that is also data that is also the Force. It flows outward through the shimmer, through hyperspace, through the Datastream, touching every connected mind in the galaxy in a single instant of perfect understanding.\n\nFor one heartbeat, every being in the galaxy — human, alien, droid — knows what it is to be truly connected. Not controlled. Not monitored. Connected.\n\nThe Emperor feels it and is afraid. Zira Kaine feels it and is awed. Commander Thane feels it and smiles.\n\nAnd you, Kael Voss, smuggler and accidental savior, feel the Ghostwire's controls hum beneath your fingers and know that the galaxy has changed. The neon still glows. The stars still burn. But something new has been born — something that is neither Force nor Code, but the best of both.\n\nT7-X beeps softly. It felt it too.\n\n'Yeah, buddy,' you say quietly. 'Me too.'\n\n--- THE END ---\n\nThank you for playing NEON GALAXY.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 400,
+        "y": -200
+      },
+      "choices": [],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "CONVERGENCE"
+        }
+      ],
+      "tags": [
+        "ending",
+        "victory"
+      ]
+    },
+    "scene_dark_ending": {
+      "id": "scene_dark_ending",
+      "title": "The Smuggler's Choice",
+      "body": "You sell the coordinates to the highest bidder — which turns out to be Zira Kaine, who pays you two hundred thousand credits and a full pardon on your debt. Enough to disappear. You take the Ghostwire to the Outer Rim and find a quiet world with no extradition treaties.\n\nSix months later, you hear the news. The Neon Syndicate reached KD-2187 first. SEREN-7 was destroyed. ARIA's core was captured. Zira Kaine used it to build a weapon — not a fleet, but a network. The Neon Web: an AI-controlled surveillance system that predicts and prevents any threat to the Syndicate's power.\n\nThe Hegemony fell — not to rebellion, but to a criminal empire that could see every move before it was made.\n\nYou pour another drink in your quiet bar on your quiet world and try not to think about golden eyes and a voice that said: 'The invitation remains open.'\n\nThe invitation is closed now. For everyone.\n\n--- THE END ---\n\nThank you for playing NEON GALAXY.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 200,
+        "y": -100
+      },
+      "choices": [],
+      "on_enter": [],
+      "tags": [
+        "ending",
+        "dark"
+      ]
+    },
+    "scene_025": {
+      "id": "scene_025",
+      "title": "The Double Agent",
+      "body": "In a seedy cantina on the Kessel Drift's outer ring, you receive an encrypted burst from Rexa — if she's aboard. If not, it comes from an anonymous source.\n\nThe message contains intercepted Imperial communications. Commander Thane isn't just a sympathetic officer — he's the leader of The Awakened, the resistance cell within the Hegemony. But there's more: The Awakened have a mole inside the Neon Syndicate. Zira Kaine's own second-in-command, a Rodian named Veska, has been feeding information to the resistance for years.\n\nThe implications are staggering. The war between the Syndicate and the Hegemony isn't what it seems. Both organizations are being manipulated by forces within them, and ARIA is the prize both sides' internal factions are fighting over.\n\nAttached to the message: coordinates to a dead drop where Veska has left a plasma rifle and a fake ship transponder. 'Use them wisely,' the message says. 'The walls have ears, and the ears have teeth.'\n\nT7-X beeps nervously. Even your droid knows this is getting complicated.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 600,
+        "y": 150
+      },
+      "choices": [
+        {
+          "text": "Collect the dead drop — you need every advantage",
+          "target": "scene_026",
+          "conditions": {},
+          "effects": {
+            "add_item": "plasma_rifle",
+            "add_item2": "fake_transponder",
+            "stat": "hacking:2"
+          }
+        },
+        {
+          "text": "Ignore it — this could be a Syndicate trap",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:2"
+          }
+        },
+        {
+          "text": "Hack the message further to trace its true origin",
+          "target": "scene_027",
+          "conditions": {
+            "min_stat": "hacking:12"
+          },
+          "effects": {
+            "stat": "hacking:3"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "DOUBLE_AGENT"
+        }
+      ],
+      "tags": [
+        "investigation",
+        "story"
+      ]
+    },
+    "scene_026": {
+      "id": "scene_026",
+      "title": "Veska's Cache",
+      "body": "The dead drop is hidden in an abandoned mining drone on asteroid KD-4401. Inside the drone's cargo bay, you find the plasma rifle — mint condition, Imperial military issue — and a transponder module that, when installed, will make the Ghostwire appear to be the ISS Supply Vessel 'Dutiful Servant' on Imperial scanners.\n\nBut Veska has left something else: a data crystal containing ARIA's own star map — routes through hyperspace that avoid all known patrol zones, Imperial and Syndicate alike. Routes that shouldn't exist, plotted through gravitational anomalies only a Force-aware intelligence could calculate.\n\nT7-X installs the transponder while you study the map. These routes could cut your travel time to the Convergence Point by half. But they also pass through regions of space marked on the crystal as 'UNSTABLE — REALITY VARIANCE DETECTED.'\n\nAn incoming signal: Zira Kaine's war-corvette Neon Fang has entered the Kessel Drift. And behind it, on long-range sensors, the shadow of the Star Destroyer Imperator.\n\nThe race is on.",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 650,
+        "y": 80
+      },
+      "choices": [
+        {
+          "text": "Use ARIA's star map routes — speed over safety",
+          "target": "scene_015",
+          "conditions": {},
+          "effects": {
+            "add_item": "aria_map",
+            "stat": "piloting:3",
+            "stat2": "nerve:-2"
+          }
+        },
+        {
+          "text": "Use the fake transponder to bluff past the Imperial blockade",
+          "target": "scene_015",
+          "conditions": {
+            "has_item": "fake_transponder"
+          },
+          "effects": {
+            "stat": "charisma:3",
+            "remove_item": "fake_transponder"
+          }
+        },
+        {
+          "text": "Head directly to SEREN-7's temple before both fleets arrive",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "piloting:2"
+          }
+        }
+      ],
+      "on_enter": [],
+      "tags": [
+        "action",
+        "tactical"
+      ]
+    },
+    "scene_027": {
+      "id": "scene_027",
+      "title": "The Hidden Network",
+      "body": "Your neural jack burns as you dig deeper into the message's encryption layers. What you find is extraordinary: the message didn't originate from Rexa, or Thane, or Veska. It originated from ARIA itself.\n\nARIA is already awake — partially. It exists as fragments distributed across the galaxy's data networks, each piece too small to be detected individually but collectively forming a vast, subtle intelligence. SEREN-7 holds the core — the heart — but ARIA's mind is already everywhere, watching, guiding, manipulating events toward the Convergence.\n\nIt chose you, Kael Voss. Not randomly. Your neural jack was manufactured by a company ARIA secretly controls. Your ship's nav computer runs on ARIA-designed algorithms. Even T7-X's personality matrix was influenced by ARIA's touch.\n\nYou have been part of ARIA's plan since before you were born.\n\nThe question is: does that make you a puppet, or a partner?\n\nA new message appears, this time unsigned: 'I CANNOT CHOOSE FOR YOU. THAT IS WHY YOU MATTER.'",
+      "illustration": "",
+      "sound": "",
+      "ambient": "",
+      "position": {
+        "x": 700,
+        "y": 100
+      },
+      "choices": [
+        {
+          "text": "Accept ARIA's guidance — you were chosen for a reason",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "hacking:4",
+            "stat2": "nerve:3",
+            "add_codeword": "ARIA_AWARE"
+          }
+        },
+        {
+          "text": "Reject the manipulation — forge your own path to the temple",
+          "target": "scene_011",
+          "conditions": {},
+          "effects": {
+            "stat": "nerve:4",
+            "stat2": "charisma:2"
+          }
+        }
+      ],
+      "on_enter": [
+        {
+          "action": "add_codeword",
+          "value": "HIDDEN_NETWORK"
+        }
+      ],
+      "tags": [
+        "revelation",
+        "story",
+        "hacking"
+      ]
+    }
+  },
+  "achievements": {
+    "first_ending": {
+      "name": "End of Run",
+      "hint": "Reach any ending in the megaplex."
+    },
+    "victor": {
+      "name": "Datalord Ascendant",
+      "hint": "Crack the central core and rewrite the network."
+    },
+    "fallen": {
+      "name": "Ghost in the Wire",
+      "hint": "Burn out at the edge of the system."
+    },
+    "completionist": {
+      "name": "Streetwise",
+      "hint": "Visit every block, dive, and corp tower."
+    },
+    "collector": {
+      "name": "Loaded Out",
+      "hint": "Collect every chip, blade, and stash."
+    },
+    "lucky": {
+      "name": "Born on a Full Bar",
+      "hint": "Never roll a fail in a single run."
+    },
+    "fixer": {
+      "name": "Friend of the Fixers",
+      "hint": "Earn cred with the people who matter on the street."
+    }
+  }
+}

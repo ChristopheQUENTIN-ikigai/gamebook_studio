@@ -1,0 +1,42 @@
+{
+  "name": "Adventurer",
+  "stats": {
+    "might": 10,
+    "wit": 8,
+    "valor": 12,
+    "stealth": 6,
+    "lore": 4,
+    "endurance": 14
+  },
+  "max_stats": {
+    "might": 14,
+    "wit": 14,
+    "valor": 16,
+    "stealth": 12,
+    "lore": 12,
+    "endurance": 20
+  },
+  "inventory": [
+    "ranger_sword",
+    "cloak_of_dusk"
+  ],
+  "max_inventory": 12,
+  "gold": 15,
+  "codewords": [],
+  "disciplines": [],
+  "current_scene": "scene_001",
+  "visited_scenes": [
+    "scene_001"
+  ],
+  "notebook": [],
+  "flags": {},
+  "history": [],
+  "play_seconds": 0.0,
+  "achievements": [],
+  "choices_made": 0,
+  "rolls_succeeded": 0,
+  "rolls_failed": 0,
+  "_timestamp": 1780236646.9921083,
+  "_slot": "autosave",
+  "_scene_title": "The Ashgate Falls"
+}

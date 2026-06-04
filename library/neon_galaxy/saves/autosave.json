@@ -1,0 +1,42 @@
+{
+  "name": "Adventurer",
+  "stats": {
+    "tech": 12,
+    "reflex": 10,
+    "nerve": 8,
+    "charisma": 6,
+    "hacking": 10,
+    "piloting": 12
+  },
+  "max_stats": {
+    "tech": 16,
+    "reflex": 14,
+    "nerve": 14,
+    "charisma": 14,
+    "hacking": 16,
+    "piloting": 16
+  },
+  "inventory": [
+    "blaster_pistol",
+    "neural_jack"
+  ],
+  "max_inventory": 12,
+  "gold": 500,
+  "codewords": [],
+  "disciplines": [],
+  "current_scene": "scene_001",
+  "visited_scenes": [
+    "scene_001"
+  ],
+  "notebook": [],
+  "flags": {},
+  "history": [],
+  "play_seconds": 0.0,
+  "achievements": [],
+  "choices_made": 0,
+  "rolls_succeeded": 0,
+  "rolls_failed": 0,
+  "_timestamp": 1780606047.4589036,
+  "_slot": "autosave",
+  "_scene_title": "Docking Bay 94, Nar Shadex"
+}
