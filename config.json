@@ -1,0 +1,72 @@
+{
+    "window": {
+        "title": "Gamebook Studio",
+        "autodetect_size": true,
+        "width": 1280,
+        "height": 800,
+        "min_width": 1024,
+        "min_height": 600,
+        "fullscreen": false,
+        "vsync": true
+    },
+    "keys": {
+        "fullscreen": "f",
+        "exit": "escape",
+        "help": "h",
+        "save": "s",
+        "load": "l",
+        "notebook": "n",
+        "editor_toggle": "e",
+        "inventory": "i",
+        "character": "c",
+        "back": "b",
+        "settings": "tab",
+        "quicksave": "r",
+        "choice_1": "1",
+        "choice_2": "2",
+        "choice_3": "3",
+        "choice_4": "4",
+        "choice_5": "5",
+        "choice_6": "6",
+        "choice_7": "7",
+        "choice_8": "8",
+        "choice_9": "9"
+    },
+    "display": {
+        "font_size": 15,
+        "title_font_size": 20,
+        "text_speed": 90,
+        "text_scroll_speed": 40,
+        "animation_speed": 1.0,
+        "theme": "dark",
+        "sidebar_width": 240,
+        "illustration_height_ratio": 0.28,
+        "choice_area_ratio": 0.20
+    },
+    "audio": {
+        "master_volume": 0.8,
+        "sfx_volume": 0.7,
+        "music_volume": 0.5,
+        "ambient_volume": 0.4
+    },
+    "gameplay": {
+        "show_dice": true,
+        "auto_save": true,
+        "fade_transitions": true
+    },
+    "paths": {
+        "library": "./library",
+        "assets": "./assets",
+        "textures": "./assets/textures",
+        "sounds": "./assets/sounds"
+    },
+    "textures": {
+        "scene_width": 960,
+        "scene_height": 400,
+        "icon_size": 48,
+        "background_width": 1280,
+        "background_height": 800,
+        "character_width": 200,
+        "character_height": 320
+    }
+}

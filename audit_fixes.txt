@@ -1,0 +1,60 @@
+Audit summary — Gamebook Studio
+
+I went through the engine systematically with a headless test harness (since arcade can't open a window here) and fixed every crash and layout defect I could reproduce. All 24 automated checks now pass with zero crashes and zero button overlaps.
+
+Crashes fixed
+
+    Studio crashed on every node click. The inspector built TextInput(..., placeholder=...) and Button(..., subtitle=...) with parameters the widgets didn't accept, and read .y on a field that only had .cy. Rewrote TextInput to be bottom-anchored with .y / .top / .cy, and added the missing params.
+    Studio "Apply" / choice "Save" would crash. Code read input.text but the widget only exposed .value — a latent AttributeError even in the original. Added a .text property.
+    "Duplicate scene" crashed on a non-existent Scene.ambient_color field (and wrong types for ambient/on_enter). Corrected to the real fields.
+    Mid-play crash on integer effect values like stat_endurance: -1; the stat-flash routine assumed every value was a "stat:DC" string. Rewrote it to handle ints and both key forms.
+
+Data fixes (silent corruption)
+
+    Effect suffixes like add_item2, add_item3 were being dropped — 31 effects across the 3 sample books silently vanished (e.g. a scene that should grant 3 items granted 1). Now all three items are granted. Both the README's direct forms (stat_might, min_might:8) and the colon forms the books actually use ({"stat":"valor:-2"}, {"min_stat":"might:12"}) are honored, plus remove_codeword / add_note.
+
+Interface / overlap fixes
+
+    The first inventory slot overlapped the "INVENTORY" header with 6-stat books; rewrote the sidebar to use one top-down cursor (verified clean on all three books).
+    Choices were top-anchored and ran off-screen at 7+ options; now bottom-anchored, auto-sized to always fit (verified with 8 choices).
+    Repositioned the toolbar progress text so it no longer collides with the HUD icons.
+
+New options / workflow
+
+    In-game Settings overlay (text speed, font size, master volume, dice + autosave toggles) on a new ⚙ icon / O key, persisted to config.json; added a ⌂ quit icon.
+    Rich choice editor: edit target, roll, fail-target, conditions, effects, and tags (not just text/target), with round-trip parsing verified.
+    "Set as Start" button, apply-on-blur (edits no longer lost when clicking another node), and Studio shortcuts: V validate, Ctrl+D duplicate, Ctrl+N/+ add, -/Delete delete.
+
+I still have left: updating README.md to document the colon-form syntax and corrected controls, then re-packaging the project as a downloadable archive for you. I hit the tool-use limit before finishing those two steps — let me know and I'll wrap them up in the next turn (all code changes above are complete and tested).
+
+
+Orchestrated documentation updates and project repackaging
+
+Picking up the two remaining steps: update the README (colon-form syntax + corrected controls), then package the fixed project. Let me read the current README first.
+Finalisant le projet et préparant l'archivage
+
+Let me check the Highlights section to add a brief note about the richer editor, keeping it focused.
+Orchestrated final verification and clean packaging procedures
+
+README is updated. Now a final full verification pass, then I'll package a clean archive.
+Final compile of all modules + condensed full probe output
+
+Everything passes. Now packaging a clean archive (excluding caches and the .orig backups):
+A exécuté une commande, lu un fichier
+
+Done — the fixed project is packaged above, with the README and all code updated and verified (24/24 automated checks, zero crashes, zero button overlaps).
+
+Wrapping up the two remaining items from last turn:
+
+README now documents the colon-form syntax the sample books actually use ({"stat":"valor:-2"} ≡ {"stat_valor": -2}, {"min_stat":"might:12"} ≡ {"min_might": 12}), corrects the controls (TAB cycles sidebar tabs, O/⚙ opens settings, the new ⌂ quit icon), lists the Studio shortcuts (V, Ctrl+D, Ctrl+N, +/-), and fixes the multi-effect suffix note (add_item2, not add_item_2).
+
+Package is a clean gamebook_studio_fixed.tar.gz — caches and my .orig backups stripped, all three sample books and their assets intact.
+
+Full scope of what was fixed this session, recapped:
+
+    Four crashes — Studio node-click (TextInput/Button unsupported params + .y), Studio Apply/Save (.text vs .value), Duplicate scene (ambient_color + wrong types), and the in-play stat-flash on integer effect values.
+    Silent data corruption — digit-suffixed effects (add_item2/3) were being dropped, losing 31 effects across the books; both the direct and colon syntaxes are now honored, plus remove_codeword/add_note.
+    Layout — inventory-vs-header overlap on 6-stat books, choices running off-screen at 7+ options, and the toolbar progress text colliding with the HUD.
+    New options/workflow — in-game settings overlay (text speed, font, volume, dice/autosave) with persistence, a rich choice editor (target/roll/fail-target/conditions/effects/tags), "Set as Start", apply-on-blur, and the Studio keyboard shortcuts.
+
+One thing worth flagging for when you next run it on your machine: I validated everything through a headless arcade stub since there's no display here, so the logic, geometry, and data paths are confirmed, but the actual on-screen rendering (fonts, exact pixel spacing) is worth a quick visual once-over — particularly the Studio inspector at small window sizes, where the choice list clamps and shows a "+N more — enlarge window" note rather than scrolling.
